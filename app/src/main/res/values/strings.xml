@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">TripFactory_Concierge_Android</string>
+    <string name="support_chat">Support Chat</string>
+    <string name="recommendations">Recommendations</string>
+    <string name="documents">Documents</string>
+    <string name="account">Account</string>
+    <string name="vouchers">Vouchers</string>
+    <string name="features">Features</string>
+    <string name="company_logo">Company logo</string>
+    <string name="concierge_app">Concierge</string>
+    <string name="storage">Storage</string>
+    <string name="support">Support</string>
+    <string name="home">Home</string>
+    <string name="extras">Extras</string>
+    <string name="rate_us">Rate Us</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
