@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lytHeader"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black">
+
+        <ImageView
+            android:id="@+id/img_home"
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:layout_centerVertical="true"
+            android:scaleType="centerInside"
+            android:layout_marginStart="@dimen/_7sdp"
+            android:src="@drawable/company_logo_tripfactory"
+            android:contentDescription="@string/company_logo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_toEndOf="@+id/img_home"
+            android:fontFamily="cursive"
+            android:singleLine="true"
+            android:text="@string/concierge_app"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_22sdp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+</LinearLayout>
