@@ -10,11 +10,11 @@
             android:icon="@drawable/ic_home"
             android:title="@string/home" />
         <item
-            android:id="@+id/bottom_notes"
+            android:id="@+id/chat"
             android:icon="@drawable/ic_chat"
             android:title="@string/support" />
         <item
-            android:id="@+id/bottom_discuss"
+            android:id="@+id/storage"
             android:icon="@drawable/ic_storage"
             android:title="@string/storage" />
     </group>

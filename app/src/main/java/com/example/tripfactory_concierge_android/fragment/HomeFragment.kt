@@ -26,7 +26,7 @@ class HomeFragment : Fragment() {
         //viewBinding fragment_home
         bindingHomeFragment = FragmentHomeBinding.inflate(inflater, container, false)
         //viewBinding activity_main
-        bindingMainActivity=(activity as MainActivity).binding
+        bindingMainActivity=(activity as MainActivity).bindingMainActivity
         //Open drawer on hamburgerIcon click
         bindingHomeFragment.ivHamburger.setOnClickListener {
             bindingMainActivity.lytDrawer.openDrawer(GravityCompat.START)
