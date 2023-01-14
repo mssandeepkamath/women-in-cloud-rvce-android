@@ -39,7 +39,7 @@ class HomeFragment : Fragment() {
 
         val formatTime=SimpleDateFormat("hh:mm aa", Locale.US)
         val time=formatTime.format(Date())
-        bindingHomeFragment.tvDate.text="${time.substring(0,5)}\n${time.substring(6)}"
+        bindingHomeFragment.tvDate.text="${time.substring(0,5)}\n ${time.substring(6)}"
         return bindingHomeFragment.root
     }
 

@@ -58,10 +58,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:background="#E8FCFF"
+        android:background="#1F1F1F"
         app:headerLayout="@layout/activity_drawer_header"
-        app:itemIconTint="@color/black"
-        app:itemTextColor="@color/black"
+        app:itemIconTint="@color/white"
+        app:itemTextColor="@color/white"
+        android:theme="@style/Theme.Nav"
         app:menu="@menu/navigation_drawer" />
 
 </androidx.drawerlayout.widget.DrawerLayout>
