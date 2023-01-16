@@ -26,7 +26,7 @@ class HomeFragment : Fragment() {
         //viewBinding fragment_home
         bindingHomeFragment = FragmentHomeBinding.inflate(inflater, container, false)
         //viewBinding activity_main
-        bindingMainActivity=(activity as MainActivity).binding
+        bindingMainActivity=(activity as MainActivity).bindingMainActivity
         //Open drawer on hamburgerIcon click
         bindingHomeFragment.ivHamburger.setOnClickListener {
             bindingMainActivity.lytDrawer.openDrawer(GravityCompat.START)
@@ -39,7 +39,7 @@ class HomeFragment : Fragment() {
 
         val formatTime=SimpleDateFormat("hh:mm aa", Locale.US)
         val time=formatTime.format(Date())
-        bindingHomeFragment.tvDate.text="${time.substring(0,5)}\n${time.substring(6)}"
+        bindingHomeFragment.tvDate.text="${time.substring(0,5)}\n ${time.substring(6)}"
         return bindingHomeFragment.root
     }
 

@@ -18,4 +18,9 @@
         <item name="colorPrimary">#CCFAFF</item>
         <item name="colorSecondaryContainer">@color/black</item>
     </style>
+
+    <style name="Theme.Nav" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/white</item>
+    </style>
+
 </resources>
