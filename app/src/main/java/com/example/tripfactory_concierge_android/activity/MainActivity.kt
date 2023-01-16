@@ -19,20 +19,20 @@ class MainActivity : AppCompatActivity() {
         //Load home fragment on activity create
         supportFragmentManager.beginTransaction().replace(bindingMainActivity.lytFrame.id,
             HomeFragment(),
-            "homeFragment").addToBackStack(null).commit()
+            "1").addToBackStack(null).commit()
         bindingMainActivity.vwBottomNavigation.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.home -> {
                     supportFragmentManager.beginTransaction().replace(bindingMainActivity.lytFrame.id,
-                        HomeFragment()).addToBackStack(null).commit()
+                        HomeFragment(),"1").addToBackStack(null).commit()
                 }
                 R.id.chat -> {
                     supportFragmentManager.beginTransaction().replace(bindingMainActivity.lytFrame.id,
-                        SupportChatFragment()).addToBackStack(null).commit()
+                        SupportChatFragment(),"2").addToBackStack(null).commit()
                 }
                 R.id.storage -> {
                     supportFragmentManager.beginTransaction().replace(bindingMainActivity.lytFrame.id,
-                        StorageFragment()).addToBackStack(null).commit()
+                        StorageFragment(),"3").addToBackStack(null).commit()
                 }
             }
             return@setOnItemSelectedListener true
