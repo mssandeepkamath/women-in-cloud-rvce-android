@@ -4,8 +4,6 @@
 
     <application
         android:allowBackup="true"
-        android:dataExtractionRules="@xml/data_extraction_rules"
-        android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
@@ -13,10 +11,29 @@
         android:theme="@style/Theme.TripFactory_Concierge_Android"
         tools:targetApi="31">
         <activity
+            android:name=".activity.VoucherActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.DocumentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.RestRoomActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.PlaceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.RestaurantActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ChatActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
@@ -24,6 +41,7 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
