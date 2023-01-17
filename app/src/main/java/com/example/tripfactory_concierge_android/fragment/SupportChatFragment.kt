@@ -27,7 +27,7 @@ class SupportChatFragment : Fragment(), OnClickListener {
     ): View? {
         bindingSupportChat = FragmentSupportChatBinding.inflate(inflater, container, false)
         bindingMainActivity = (activity as MainActivity).bindingMainActivity
-        //Click listeners
+        //on Click calls
         bindingSupportChat.ivBack.setOnClickListener(this)
         bindingSupportChat.ivHamburger.setOnClickListener(this)
         bindingSupportChat.cvChat.setOnClickListener(this)

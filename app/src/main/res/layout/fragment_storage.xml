@@ -33,7 +33,7 @@
             android:layout_marginTop="@dimen/_20sdp"
             android:fontFamily="sans-serif"
             android:singleLine="true"
-            android:text="Storage"
+            android:text="@string/storage_name"
             android:textColor="@color/white"
             android:textSize="@dimen/_17sdp"
             android:textStyle="bold" />

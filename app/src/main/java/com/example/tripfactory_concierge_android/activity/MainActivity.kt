@@ -19,7 +19,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(bindingMainActivity.root)
         //Load home fragment on activity create
         replaceFragment(bindingMainActivity.lytFrame.id,HomeFragment(),"HomeFragment")
+        //check the first item of bottom navigation on start
+        bindingMainActivity.vwBottomNavigation.menu.findItem(R.id.home).isChecked = true
 
+        //bottom navigation OnClick function
         bindingMainActivity.vwBottomNavigation.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.home -> {
@@ -38,18 +41,22 @@ class MainActivity : AppCompatActivity() {
 
     private fun replaceFragment(frameLayoutId : Int, fragment:Fragment,tag:String)
     {
+        //replacing the fragment
         supportFragmentManager.beginTransaction().replace(frameLayoutId,fragment,tag).commit()
     }
 
     override fun onBackPressed() {
+        //get the fragment currently attached to frame layout
         val fragment=supportFragmentManager.findFragmentById(bindingMainActivity.lytFrame.id)
         when(fragment)
         {
+            //if fragment attached is not home fragment, then on back pressed come back to home fragment
             !is HomeFragment->
             {
                 replaceFragment(bindingMainActivity.lytFrame.id,HomeFragment(),"HomeFragment")
                 bindingMainActivity.vwBottomNavigation.menu.findItem(R.id.home).isChecked = true
             }
+            //Else follow the default behaviour of activity stack pop
             else->super.onBackPressed()
         }
     }

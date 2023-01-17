@@ -24,5 +24,6 @@
     <string name="places">Places</string>
     <string name="title_activity_place">PlaceActivity</string>
     <string name="documents_you_might_need">Documents you might need</string>
+    <string name="storage_name">Storage</string>
 
 </resources>

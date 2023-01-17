@@ -28,6 +28,7 @@ class StorageFragment : Fragment(),OnClickListener{
     ): View? {
         bindingStorageFragment=FragmentStorageBinding.inflate(inflater,container,false)
         bindingMainActivity = (activity as MainActivity).bindingMainActivity
+        //on click calls
         bindingStorageFragment.ivBack.setOnClickListener(this)
         bindingStorageFragment.ivHamburger.setOnClickListener(this)
         bindingStorageFragment.cvDocument.setOnClickListener(this)
