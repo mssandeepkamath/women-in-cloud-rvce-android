@@ -11,33 +11,54 @@ import com.example.tripfactory_concierge_android.fragment.StorageFragment
 import com.example.tripfactory_concierge_android.fragment.SupportChatFragment
 
 class MainActivity : AppCompatActivity() {
+
     lateinit var bindingMainActivity: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         bindingMainActivity = ActivityMainBinding.inflate(layoutInflater)
         setContentView(bindingMainActivity.root)
         //Load home fragment on activity create
-        supportFragmentManager.beginTransaction().replace(bindingMainActivity.lytFrame.id,
-            HomeFragment(),
-            "1").addToBackStack(null).commit()
+        replaceFragment(bindingMainActivity.lytFrame.id,HomeFragment(),"HomeFragment")
+
         bindingMainActivity.vwBottomNavigation.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.home -> {
-                    supportFragmentManager.beginTransaction().replace(bindingMainActivity.lytFrame.id,
-                        HomeFragment(),"1").addToBackStack(null).commit()
+                  replaceFragment(bindingMainActivity.lytFrame.id,HomeFragment(),"HomeFragment")
                 }
                 R.id.chat -> {
-                    supportFragmentManager.beginTransaction().replace(bindingMainActivity.lytFrame.id,
-                        SupportChatFragment(),"2").addToBackStack(null).commit()
+                    replaceFragment(bindingMainActivity.lytFrame.id,SupportChatFragment(),"SupportChatFragment")
                 }
                 R.id.storage -> {
-                    supportFragmentManager.beginTransaction().replace(bindingMainActivity.lytFrame.id,
-                        StorageFragment(),"3").addToBackStack(null).commit()
+                    replaceFragment(bindingMainActivity.lytFrame.id,StorageFragment(),"StorageFragment")
                 }
             }
             return@setOnItemSelectedListener true
         }
     }
+
+    private fun replaceFragment(frameLayoutId : Int, fragment:Fragment,tag:String)
+    {
+        supportFragmentManager.beginTransaction().replace(frameLayoutId,fragment,tag).commit()
+    }
+
+    override fun onBackPressed() {
+        val fragment=supportFragmentManager.findFragmentById(bindingMainActivity.lytFrame.id)
+        when(fragment)
+        {
+            !is HomeFragment->
+            {
+                replaceFragment(bindingMainActivity.lytFrame.id,HomeFragment(),"HomeFragment")
+                bindingMainActivity.vwBottomNavigation.menu.findItem(R.id.home).isChecked = true
+            }
+            else->super.onBackPressed()
+        }
+    }
+
+
+
+
+
+
 
 
 }
