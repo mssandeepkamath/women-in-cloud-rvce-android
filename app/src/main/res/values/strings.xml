@@ -25,5 +25,6 @@
     <string name="title_activity_place">PlaceActivity</string>
     <string name="documents_you_might_need">Documents you might need</string>
     <string name="storage_name">Storage</string>
+    <string name="add_your_privacy_policy_here">Add your privacy policy here</string>
 
 </resources>

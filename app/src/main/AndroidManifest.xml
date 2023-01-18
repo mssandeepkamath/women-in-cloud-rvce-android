@@ -11,6 +11,12 @@
         android:theme="@style/Theme.TripFactory_Concierge_Android"
         tools:targetApi="31">
         <activity
+            android:name=".activity.PrivacyPolicyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.AccountActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.VoucherActivity"
             android:exported="false" />
         <activity

@@ -3,10 +3,12 @@
 
     <group
         android:id="@+id/grpFeatures"
-        android:checkableBehavior="single">
+        android:checkableBehavior="single"
+         >
     <item
         android:id="@+id/main_item"
-        android:title="@string/features">
+        android:title="@string/features"
+        android:checkable="false">
 
         <menu>
 
@@ -50,7 +52,8 @@
         android:checkableBehavior="single">
         <item
             android:id="@+id/extra_item"
-            android:title="@string/extras">
+            android:title="@string/extras"
+            android:checkable="false">
 
             <menu>
 
