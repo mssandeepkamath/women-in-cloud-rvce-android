@@ -93,19 +93,163 @@
 
         </androidx.cardview.widget.CardView>
 
+<androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginStart="@dimen/_14sdp"
             android:fontFamily="sans-serif"
             android:gravity="top"
-            android:layout_marginTop="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_10sdp"
             android:text="@string/what_are_you_looking_for"
             android:textColor="@color/white"
-            android:textSize="@dimen/_17sdp"
+            android:textSize="@dimen/_15sdp"
             android:textStyle="normal"
             android:singleLine="true"/>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_margin="@dimen/_12sdp"
+                android:weightSum="3"
+                >
+
+                <LinearLayout
+                    android:id="@+id/lytResturants"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_marginHorizontal="@dimen/_7sdp"
+                    android:layout_weight="1"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    >
+
+                    <ImageView
+                        android:layout_width="@dimen/_70sdp"
+                        android:layout_height="@dimen/_60sdp"
+                        android:layout_gravity="center"
+                        android:contentDescription="restuarant image"
+                        android:src="@drawable/restaurant"
+                    />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif"
+                        android:layout_gravity="center"
+                        android:text="@string/restaurants"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_12sdp"
+                        android:textStyle="normal"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:singleLine="true"/>
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/lytPlaces"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_marginHorizontal="@dimen/_7sdp"
+                    android:layout_weight="1"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    >
+
+                    <ImageView
+                        android:layout_width="@dimen/_70sdp"
+                        android:layout_height="@dimen/_60sdp"
+                        android:src="@drawable/places"
+                        android:layout_gravity="center"
+                        android:contentDescription="place image"
+                      />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif"
+                        android:layout_gravity="center"
+                        android:text="@string/places"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_12sdp"
+                        android:textStyle="normal"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:singleLine="true"
+                     />
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/lytRestRooms"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_marginHorizontal="@dimen/_7sdp"
+                    android:layout_weight="1"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    >
+
+                    <ImageView
+
+                        android:layout_width="@dimen/_70sdp"
+                        android:layout_height="@dimen/_60sdp"
+                        android:src="@drawable/restrooms"
+                        android:layout_gravity="center"
+                        android:contentDescription="restroom image"
+                     />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif"
+                        android:layout_gravity="center"
+                        android:text="@string/rest_rooms"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_12sdp"
+                        android:textStyle="normal"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:singleLine="true"/>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_14sdp"
+            android:fontFamily="sans-serif"
+            android:text="Our Recommendations:"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_15sdp"
+            android:textStyle="normal"
+            android:singleLine="true"/>
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>
+
 
     </LinearLayout>
 

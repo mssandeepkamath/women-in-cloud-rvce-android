@@ -58,7 +58,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:background="@color/gray"
+        android:background="#1B1A1A"
         app:headerLayout="@layout/activity_drawer_header"
         app:itemIconTint="@color/white"
         app:itemTextColor="@color/white"
