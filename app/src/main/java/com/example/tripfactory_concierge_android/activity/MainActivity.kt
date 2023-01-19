@@ -69,8 +69,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.rate_us -> {
                     val playStoreIntent = Intent(Intent.ACTION_VIEW)
-                    intent.data =
-                        Uri.parse("https://play.google.com/store/apps/details?id=com.sandeep.studybear")
+                    intent.data = Uri.parse("https://play.google.com/store/apps/details?id=com.sandeep.studybear")
                     bindingMainActivity.lytDrawer.closeDrawers()
                     startActivity(playStoreIntent)
                 }
