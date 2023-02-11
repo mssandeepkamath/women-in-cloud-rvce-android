@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/lytRel"
+    android:layout_height="match_parent"
+    tools:context=".activity.InternshipActivity">
+
+    <RelativeLayout
+        android:id="@+id/topBar"
+        android:background="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:padding="@dimen/_4sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:src="@drawable/back" />
+
+        <TextView
+            android:id="@+id/tvLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:fontFamily="sans-serif"
+            android:singleLine="true"
+            android:text="Active Internships"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_17sdp"
+            android:textStyle="bold" />
+
+
+    </RelativeLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/lytRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/topBar"
+        >
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/vwRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#A0A0A0"
+            />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+
+    <RelativeLayout
+        android:id="@+id/lytProgress"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        >
+
+        <ProgressBar
+            android:id="@+id/barProgress"
+            android:layout_width="@dimen/_75sdp"
+            android:layout_height="@dimen/_75sdp"
+            android:indeterminateTint="@color/green"
+            android:layout_centerInParent="true"
+            />
+
+        <TextView
+            android:id="@+id/txtError"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/we_are_sorry_please_try_again"
+            android:layout_centerInParent="true"
+            android:textColor="@color/red"
+            android:textSize="@dimen/_17sdp"
+            />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

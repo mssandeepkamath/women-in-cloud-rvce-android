@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TripFactory_Concierge_Android</string>
+    <string name="app_name">WIC-RVCE</string>
     <string name="support_chat">Support Chat</string>
     <string name="recommendations">Recommendations</string>
     <string name="documents">Documents</string>
@@ -15,16 +15,22 @@
     <string name="rate_us">Rate Us</string>
     <string name="privacy_policy">Privacy Policy</string>
     <string name="what_are_you_looking_for">What are you looking for?</string>
-    <string name="support_chat_new">Support Chat</string>
+    <string name="support_chat_new">Your Workspace</string>
     <string name="ask_help">Experiencing problem? We are here to help you!</string>
     <string name="email_us">Email us</string>
     <string name="chat_to_us">Chat to us</string>
-    <string name="restaurants">Restaurants</string>
-    <string name="rest_rooms">Rest Rooms</string>
-    <string name="places">Places</string>
+    <string name="restaurants">Projects</string>
+    <string name="rest_rooms">Events</string>
+    <string name="places">Internships</string>
     <string name="title_activity_place">PlaceActivity</string>
     <string name="documents_you_might_need">Documents you might need</string>
-    <string name="storage_name">Storage</string>
+    <string name="account_name">Your Account</string>
     <string name="add_your_privacy_policy_here">Add your privacy policy here</string>
+    <string name="Workspace">Workspace</string>
+    <string name="register_user">https://restfulapiworkspacemanagement-production.up.railway.app/register-student</string>
+    <string name="projectsList">https://restfulapiworkspacemanagement-production.up.railway.app/projects</string>
+    <string name="we_are_sorry_please_try_again">Something went wrong, Please try again</string>
+    <string name="internshipList">https://restfulapiworkspacemanagement-production.up.railway.app/internships</string>
+
 
 </resources>

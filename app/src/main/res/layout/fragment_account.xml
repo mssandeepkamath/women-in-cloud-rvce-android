@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/black"
+    android:orientation="vertical"
+    tools:context=".fragment.AccountFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:src="@drawable/back"
+            android:padding="@dimen/_4sdp"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            />
+
+        <TextView
+            android:id="@+id/tvLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:fontFamily="sans-serif"
+            android:singleLine="true"
+            android:text="@string/account_name"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_17sdp"
+            android:textStyle="bold" />
+
+
+        <ImageView
+            android:id="@+id/ivHamburger"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:padding="@dimen/_4sdp"
+            android:src="@drawable/hamburger_white"
+            android:layout_alignParentEnd="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="@dimen/_30sdp"
+                android:layout_margin="@dimen/_10sdp"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/background_border"
+                    android:padding="@dimen/_10sdp"
+                    >
+
+
+
+
+
+                    <TextView
+                        android:id="@+id/txtIdCard"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:textAlignment="center"
+                        android:layout_gravity="center"
+                        android:textSize="@dimen/_17sdp"
+                        android:text="WOMEN IN CLOUD"
+                        android:fontFamily="@font/roboto"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        />
+
+
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/imgProfile"
+                        android:layout_width="@dimen/_100sdp"
+                        android:layout_height="@dimen/_100sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/rvce"
+                        />
+
+                    <!--                    <com.facebook.shimmer.ShimmerFrameLayout-->
+                    <!--                        android:id="@+id/lytShimmerAccount"-->
+                    <!--                        android:layout_width="match_parent"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        app:shimmer_base_color="#858585"-->
+                    <!--                        app:shimmer_colored="false">-->
+
+                    <!--                    </com.facebook.shimmer.ShimmerFrameLayout>-->
+                    <TextView
+                        android:id="@+id/txtName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:textAlignment="center"
+                        android:layout_gravity="center"
+                        android:textSize="@dimen/_16sdp"
+                        android:fontFamily="@font/roboto"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        />
+
+                    <TextView
+                        android:id="@+id/txtEmail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="normal"
+                        android:textColor="@color/black"
+                        android:textAlignment="center"
+                        android:layout_gravity="center"
+                        android:textSize="@dimen/_13sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:fontFamily="@font/roboto"
+                        android:singleLine="true"
+                        />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <RelativeLayout
+                android:id="@+id/lytAboutUs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10sdp"
+                android:background="@drawable/card_border"
+                android:padding="@dimen/_5sdp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                >
+
+                <TextView
+                    android:id="@+id/txtAboutUs"
+                    android:layout_width="@dimen/_150sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:fontFamily="@font/roboto"
+                    android:padding="@dimen/_3sdp"
+                    android:text="About us"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14sdp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_toEndOf="@id/txtAboutUs"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_about_us"
+                    android:layout_marginTop="@dimen/_5sdp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txtAboutUs"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:fontFamily="@font/roboto"
+                    android:gravity="start"
+                    android:padding="@dimen/_3sdp"
+                    android:text="Learn more about COE"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12sdp" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/lytContactUs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10sdp"
+                android:background="@drawable/card_border"
+                android:padding="@dimen/_5sdp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                >
+
+                <TextView
+                    android:id="@+id/txtContactUs"
+                    android:layout_width="@dimen/_150sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:fontFamily="@font/roboto"
+                    android:padding="@dimen/_3sdp"
+                    android:text="Contact us"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14sdp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_toEndOf="@id/txtContactUs"
+                    android:scaleType="fitCenter"
+                    app:tint="@color/white"
+                    android:src="@drawable/baseline_contact_support_24"
+                    android:layout_marginTop="@dimen/_5sdp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txtContactUs"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:fontFamily="@font/roboto"
+                    android:gravity="start"
+                    android:padding="@dimen/_3sdp"
+                    android:text="Get in touch with us for help."
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12sdp" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/lytReport"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10sdp"
+                android:background="@drawable/card_border"
+                android:padding="@dimen/_5sdp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                >
+
+                <TextView
+                    android:id="@+id/txtFeedback"
+                    android:layout_width="@dimen/_150sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:fontFamily="@font/roboto"
+                    android:padding="@dimen/_3sdp"
+                    android:text="Feedback"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14sdp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_toEndOf="@id/txtFeedback"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/baseline_bug_report_24"
+                    android:layout_marginTop="@dimen/_5sdp"/>
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txtFeedback"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:fontFamily="@font/roboto"
+                    android:gravity="start"
+                    android:padding="@dimen/_3sdp"
+                    android:text="Help us in making our app bug free."
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12sdp" />
+
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/lytLogOut"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+               android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:background="@drawable/card_border"
+                android:padding="@dimen/_5sdp"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_marginBottom="@dimen/_80sdp"
+                android:foreground="?attr/selectableItemBackground"
+                >
+
+                <TextView
+                    android:id="@+id/txtLogOut"
+                    android:layout_width="@dimen/_150sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:fontFamily="@font/roboto"
+                    android:padding="@dimen/_3sdp"
+                    android:text="Log out"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14sdp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_toEndOf="@id/txtLogOut"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_logout"
+                    android:layout_marginTop="@dimen/_5sdp"/>
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txtLogOut"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:fontFamily="@font/roboto"
+                    android:gravity="start"
+                    android:padding="@dimen/_3sdp"
+                    android:text="Get back soon."
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12sdp" />
+
+
+            </RelativeLayout>
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+
+
+</LinearLayout>

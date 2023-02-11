@@ -11,31 +11,49 @@
         <menu>
 
             <item
-                android:id="@+id/recommendation"
+                android:id="@+id/dlProject"
                 android:icon="@drawable/ic_recommendation"
-                android:title="@string/recommendations"
+                android:title="Projects"
                 android:checkable="false"/>
             <item
-                android:id="@+id/support_chat"
+                android:id="@+id/dlInternship"
                 android:icon="@drawable/ic_chat"
-                android:title="@string/support_chat"
+                android:title="Internships"
                 android:checkable="false"/>
             <item
                 android:id="@+id/document"
                 android:icon="@drawable/ic_document"
-                android:title="@string/documents"
+                android:title="Events"
                 android:checkable="false"/>
 
             <item
-                android:id="@+id/voucher"
-                android:icon="@drawable/ic_voucher"
-                android:title="@string/vouchers"
+                android:id="@+id/workspace"
+                android:icon="@drawable/ic_workspace"
+                android:title="Workspace"
                 android:checkable="false"/>
 
             <item
                 android:id="@+id/account"
                 android:icon="@drawable/ic_account"
-                android:title="@string/account"
+                android:title="Account"
+                android:checkable="false"/>
+
+            <item
+                android:id="@+id/archives"
+                android:icon="@drawable/ic_account"
+                android:title="Archives"
+                android:checkable="false"/>
+
+            <item
+                android:id="@+id/student_chapter"
+                android:icon="@drawable/ic_account"
+                android:title="Student Chapter"
+                android:checkable="false"/>
+
+            <item
+                android:id="@+id/about_us"
+                android:icon="@drawable/ic_account"
+                android:title="About us"
                 android:checkable="false"/>
 
         </menu>

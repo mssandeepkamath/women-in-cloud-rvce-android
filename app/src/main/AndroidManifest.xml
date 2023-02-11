@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,6 +12,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TripFactory_Concierge_Android"
         tools:targetApi="31">
+        <activity
+            android:name=".activity.InternshipActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.LoginActivity"
+            android:exported="false" />
         <activity
             android:name=".activity.PrivacyPolicyActivity"
             android:exported="false" />
@@ -20,7 +40,7 @@
             android:name=".activity.VoucherActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.DocumentActivity"
+            android:name=".activity.ProjectActivity"
             android:exported="false" />
         <activity
             android:name=".activity.RestRoomActivity"
@@ -36,13 +56,7 @@
             android:exported="false" />
         <activity
             android:name=".activity.MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
+            android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

@@ -2,29 +2,34 @@ package com.example.tripfactory_concierge_android.fragment
 
 import android.app.Activity
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
+import android.text.TextPaint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.View.OnClickListener
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
 import com.example.tripfactory_concierge_android.R
-import com.example.tripfactory_concierge_android.activity.MainActivity
-import com.example.tripfactory_concierge_android.activity.PlaceActivity
-import com.example.tripfactory_concierge_android.activity.RestRoomActivity
-import com.example.tripfactory_concierge_android.activity.RestaurantActivity
+import com.example.tripfactory_concierge_android.activity.*
 import com.example.tripfactory_concierge_android.databinding.ActivityMainBinding
 import com.example.tripfactory_concierge_android.databinding.FragmentHomeBinding
+import com.magicgoop.tagsphere.OnTagTapListener
+import com.magicgoop.tagsphere.item.TagItem
+import com.magicgoop.tagsphere.item.TextTagItem
+import org.imaginativeworld.whynotimagecarousel.model.CarouselItem
 import java.text.SimpleDateFormat
 import java.util.*
 
 
-class HomeFragment : Fragment(),OnClickListener {
+class HomeFragment : Fragment(), OnClickListener {
 
 
     private lateinit var bindingHomeFragment: FragmentHomeBinding
     private lateinit var bindingMainActivity: ActivityMainBinding
+    private var list = mutableListOf<CarouselItem>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,44 +38,77 @@ class HomeFragment : Fragment(),OnClickListener {
         //viewBinding fragment_home
         bindingHomeFragment = FragmentHomeBinding.inflate(inflater, container, false)
         //viewBinding activity_main
-        bindingMainActivity=(activity as MainActivity).bindingMainActivity
+        bindingMainActivity = (activity as MainActivity).bindingMainActivity
+
         //Close drawer on navigationDrawerHeader click
         bindingMainActivity.vwNavigation.getHeaderView(0).setOnClickListener {
             bindingMainActivity.lytDrawer.closeDrawers()
         }
-        //Display date
-        val formatTime=SimpleDateFormat("hh:mm aa", Locale.US)
-        val time=formatTime.format(Date())
-        bindingHomeFragment.tvDate.text="${time.substring(0,5)}\n ${time.substring(6)}"
-        //on click declarations
         bindingHomeFragment.ivHamburger.setOnClickListener(this)
-        bindingHomeFragment.lytResturants.setOnClickListener(this)
-        bindingHomeFragment.lytPlaces.setOnClickListener(this)
-        bindingHomeFragment.lytRestRooms.setOnClickListener(this)
+        bindingHomeFragment.lytProjects.setOnClickListener(this)
+        bindingHomeFragment.lytInternship.setOnClickListener(this)
+
+        bindingHomeFragment.carousel.registerLifecycle(viewLifecycleOwner)
+        list.add(CarouselItem(imageDrawable = R.drawable.p2580883_51954099567_o))
+        list.add(CarouselItem(imageDrawable = R.drawable.p2580896_51955154038_o))
+        list.add(CarouselItem(imageDrawable = R.drawable.p2580961_51955154873_o))
+        list.add(CarouselItem(imageDrawable = R.drawable.p2580965_51955389649_o))
+        list.add(CarouselItem(imageDrawable = R.drawable.p2580986_51955162953_o))
+        list.add(CarouselItem(imageDrawable = R.drawable.p2580997_51955688650_o))
+
+        bindingHomeFragment.carousel.setData(list);
         return bindingHomeFragment.root
     }
 
+
     override fun onClick(v: View?) {
-       when(v?.id)
-       {
-           //Open drawer on hamburgerIcon click
-           R.id.ivHamburger->  bindingMainActivity.lytDrawer.openDrawer(GravityCompat.START)
-           R.id.lytResturants->{
-               intentProvider(RestaurantActivity())
-           }
-           R.id.lytPlaces->{
-               intentProvider(PlaceActivity())
-           }
-           R.id.lytRestRooms->{
-               intentProvider(RestRoomActivity())
-           }
-       }
+        when (v?.id) {
+            //Open drawer on hamburgerIcon click
+            R.id.ivHamburger -> bindingMainActivity.lytDrawer.openDrawer(GravityCompat.START)
+            R.id.lytProjects -> {
+                intentProvider(ProjectActivity())
+            }
+            R.id.lytInternship -> {
+                intentProvider(InternshipActivity())
+            }
+        }
     }
-    private fun intentProvider(activityName:Activity)
-    {
+
+    private fun intentProvider(activityName: Activity) {
         //Intent to respective activities
-        val intent= Intent(activity as MainActivity,activityName::class.java)
+        val intent = Intent(activity as MainActivity, activityName::class.java)
         (activity as MainActivity).startActivity(intent)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        initTagView()
+    }
+
+    private fun initTagView() {
+        bindingHomeFragment.tagSphereView.setTextPaint(
+            TextPaint().apply {
+                isAntiAlias = true
+                textSize = resources.getDimension(com.intuit.sdp.R.dimen._15sdp)
+                color = Color.rgb(126, 106, 0)
+            }
+        )
+
+        (0..40).map {
+            TextTagItem(text = "Member: $it")
+        }.toList().let {
+            bindingHomeFragment.tagSphereView.addTagList(it)
+        }
+        bindingHomeFragment.tagSphereView.setRadius(3f)
+        bindingHomeFragment.tagSphereView.setOnTagTapListener(object : OnTagTapListener {
+            override fun onTap(tagItem: TagItem) {
+                Toast.makeText(
+                    requireContext(),
+                    "${(tagItem as TextTagItem).text}",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        })
     }
 
 

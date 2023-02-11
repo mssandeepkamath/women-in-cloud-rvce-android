@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "146950354250",
+    "firebase_url": "https://restfulcoe-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "restfulcoe",
+    "storage_bucket": "restfulcoe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:146950354250:android:3a60500d671f50d32efdb3",
+        "android_client_info": {
+          "package_name": "com.example.tripfactory_concierge_android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "146950354250-a45b0hjmls29h371riq51a281q70dnb5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.tripfactory_concierge_android",
+            "certificate_hash": "8d1e7f65e88c416912d21617b5dd50b2db428a79"
+          }
+        },
+        {
+          "client_id": "146950354250-i5ntkb5adj0bmjlnhpspqpbirjs4tgip.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0A1Xu69TXc_XxZnyMndzhgkk9NIIkY5w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "146950354250-i5ntkb5adj0bmjlnhpspqpbirjs4tgip.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

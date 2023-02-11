@@ -6,11 +6,10 @@ import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentTransaction
 import com.example.tripfactory_concierge_android.R
 import com.example.tripfactory_concierge_android.databinding.ActivityMainBinding
 import com.example.tripfactory_concierge_android.fragment.HomeFragment
-import com.example.tripfactory_concierge_android.fragment.StorageFragment
+import com.example.tripfactory_concierge_android.fragment.AccountFragment
 import com.example.tripfactory_concierge_android.fragment.SupportChatFragment
 
 class MainActivity : AppCompatActivity() {
@@ -31,18 +30,18 @@ class MainActivity : AppCompatActivity() {
                 R.id.home -> {
                     replaceFragment(bindingMainActivity.lytFrame.id, HomeFragment(), "HomeFragment")
                 }
-                R.id.chat -> {
+                R.id.workspace -> {
                     replaceFragment(
                         bindingMainActivity.lytFrame.id,
                         SupportChatFragment(),
                         "SupportChatFragment"
                     )
                 }
-                R.id.storage -> {
+                R.id.account -> {
                     replaceFragment(
                         bindingMainActivity.lytFrame.id,
-                        StorageFragment(),
-                        "StorageFragment"
+                        AccountFragment(),
+                        "AccountFragment"
                     )
                 }
             }
@@ -52,17 +51,14 @@ class MainActivity : AppCompatActivity() {
         //navigation drawer onclick function
         bindingMainActivity.vwNavigation.setNavigationItemSelectedListener {
             when (it.itemId) {
-                R.id.recommendation -> {
-                    intentProvider(RestaurantActivity())
+                R.id.dlProject -> {
+                    intentProvider(ProjectActivity())
                 }
-                R.id.support_chat -> {
-                    intentProvider(ChatActivity())
+                R.id.dlInternship -> {
+                    intentProvider(InternshipActivity())
                 }
                 R.id.document -> {
-                    intentProvider(DocumentActivity())
-                }
-                R.id.voucher -> {
-                    intentProvider(VoucherActivity())
+                    intentProvider(ProjectActivity())
                 }
                 R.id.account -> {
                     intentProvider(AccountActivity())
