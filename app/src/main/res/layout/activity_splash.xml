@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,6 +9,28 @@
     android:id="@+id/bg_SplashActivity"
     tools:context=".activity.SplashActivity">
 
+
+
+
+    <com.skyfishjy.library.RippleBackground
+    android:id="@+id/lytripple"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    app:rb_color="#FAFF00DD"
+    app:rb_radius="32dp"
+    app:rb_rippleAmount="2"
+    app:rb_duration="1500"
+    app:rb_scale="3.5">
+
+        <ImageView
+            android:id="@+id/imgLogo"
+            android:layout_width="@dimen/_150sdp"
+            android:layout_height="@dimen/_110sdp"
+            android:layout_centerInParent="true"
+            android:contentDescription="@string/company_logo"
+            android:scaleType="centerCrop"
+            android:src="@drawable/women_cloud_nobg" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -19,15 +42,9 @@
         android:textSize="@dimen/_15sdp"
         android:textStyle="bold" />
 
-    <ImageView
-        android:id="@+id/imgLogo"
-        android:layout_width="@dimen/_150sdp"
-        android:layout_height="@dimen/_110sdp"
-        android:layout_centerInParent="true"
-        android:layout_gravity="center"
-        android:contentDescription="@string/company_logo"
-        android:scaleType="centerCrop"
-        android:src="@drawable/women_cloud" />
+
+</com.skyfishjy.library.RippleBackground>
+
 
 
     <RelativeLayout

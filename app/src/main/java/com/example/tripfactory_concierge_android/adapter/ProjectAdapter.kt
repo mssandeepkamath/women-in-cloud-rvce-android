@@ -3,17 +3,10 @@ package com.example.tripfactory_concierge_android.adapter
 import android.app.ProgressDialog
 import android.content.Context
 import android.content.Intent
-import android.net.Uri
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.bumptech.glide.load.engine.DiskCacheStrategy
-import com.example.tripfactory_concierge_android.R
+import com.example.tripfactory_concierge_android.activity.DescriptionActivity
 import com.example.tripfactory_concierge_android.databinding.ProjectItemBinding
 import com.example.tripfactory_concierge_android.entity.Project
 import com.google.firebase.auth.FirebaseAuth
@@ -40,8 +33,12 @@ class ProjectAdapter(val context: Context, val itemArrayList: ArrayList<Project>
                 binding.tvName.text = this.company_name
                 binding.tvOpen.text = this.opening.toString()
                 binding.tvDescription.text = this.description
+                binding.tvStart.text = this.start_date
+                binding.tvEnd.text = this.end_date
                 binding.btnProject.setOnClickListener {
-                    Toast.makeText(context, "Hi", Toast.LENGTH_LONG).show()
+                    val intent = Intent(context, DescriptionActivity::class.java)
+                    intent.putExtra("PROJECT", this)
+                    context.startActivity(intent)
                 }
             }
         }

@@ -34,12 +34,15 @@ class ProjectActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         bindingProjectActivity = ActivityProjectBinding.inflate(layoutInflater)
         setContentView(bindingProjectActivity.root)
-        var runnable: Runnable? = null
+        bindingProjectActivity.ivBack.setOnClickListener {
+            finish()
+        }
         layoutManager = LinearLayoutManager(this)
         bindingProjectActivity.lytRefresh.setColorSchemeColors(
             ContextCompat.getColor(this, R.color.green),
             ContextCompat.getColor(this, R.color.red)
         );
+        bindingProjectActivity.barProgress.startRippleAnimation()
         bindingProjectActivity.lytProgress.visibility = View.VISIBLE
         bindingProjectActivity.txtError.visibility = View.GONE
         auth = FirebaseAuth.getInstance()
@@ -50,18 +53,11 @@ class ProjectActivity : AppCompatActivity() {
             SwipeRefreshLayout.OnRefreshListener {
 
             override fun onRefresh() {
-                itemArray.clear()
                 bindingProjectActivity.vwRecyclerView.adapter?.notifyDataSetChanged()
-                bindingProjectActivity.lytProgress.visibility = View.VISIBLE
-                bindingProjectActivity.barProgress.visibility = View.VISIBLE
-                bindingProjectActivity.txtError.visibility = View.GONE
-                Handler().postDelayed(
-                    Runnable {
-
-                        bindingProjectActivity.lytRefresh.isRefreshing = false
-                        volleyGetRequest()
-                    }, 1000
-                )
+//                bindingProjectActivity.lytProgress.visibility = View.VISIBLE
+//                bindingProjectActivity.barProgress.visibility = View.VISIBLE
+//                bindingProjectActivity.txtError.visibility = View.GONE
+                volleyGetRequest()
             }
         })
 
@@ -77,20 +73,22 @@ class ProjectActivity : AppCompatActivity() {
                 { response ->
                     try {
                         val jsonArray: JSONArray = response
-
+                        itemArray.clear()
                         bindingProjectActivity.lytProgress.visibility = View.GONE
                         for (i in 0 until jsonArray.length()) {
                             val jsonObject: JSONObject = jsonArray.getJSONObject(i)
+                            val id :Int=jsonObject.getInt("project_id")
                             val company_name: String = jsonObject.getString("company_name")
                             val opening: String ="Vacancy: " + jsonObject.getInt("opening").toString()
                             val description: String = "Description: " + jsonObject.getString("description")
                             val requirements: String = jsonObject.getString("requirements")
-                            val start_date: String = jsonObject.getString("start_date")
-                            val end_date: String = jsonObject.getString("end_date")
+                            val start_date: String ="Start: "+ jsonObject.getString("start_date").substring(0,10)
+                            val end_date: String = "End: "+jsonObject.getString("end_date").substring(0,10)
                             val resources: String = jsonObject.getString("resources")
                             val manager: String = jsonObject.getString("manager")
                             itemArray.add(
                                 Project(
+                                    id,
                                     company_name,
                                     opening,
                                     description,
@@ -105,9 +103,11 @@ class ProjectActivity : AppCompatActivity() {
                         }
                         bindingProjectActivity.vwRecyclerView.layoutManager = layoutManager
                         bindingProjectActivity.vwRecyclerView.adapter = ProjectAdapter(this, itemArray)
+                        bindingProjectActivity.lytRefresh.isRefreshing = false
                     } catch (e: JSONException) {
                         bindingProjectActivity.lytProgress.visibility = View.VISIBLE
                         bindingProjectActivity.barProgress.visibility = View.GONE
+                        bindingProjectActivity.barProgress.stopRippleAnimation()
                         bindingProjectActivity.txtError.visibility = View.VISIBLE
                         ToastMessage("Some unexpected error occurred.")
                     }
@@ -115,6 +115,7 @@ class ProjectActivity : AppCompatActivity() {
                 },
                 { error ->
                     bindingProjectActivity.barProgress.visibility = View.GONE
+                    bindingProjectActivity.barProgress.stopRippleAnimation()
                     bindingProjectActivity.txtError.visibility = View.VISIBLE
                     ToastMessage("Something went wrong..")
                     println("Error: $error")
@@ -134,6 +135,7 @@ class ProjectActivity : AppCompatActivity() {
 
         } else {
             bindingProjectActivity.barProgress.visibility = View.GONE
+            bindingProjectActivity.barProgress.stopRippleAnimation()
             bindingProjectActivity.txtError.visibility = View.VISIBLE
             ConnectionManager().createDialog(bindingProjectActivity.lytRel, this)
         }

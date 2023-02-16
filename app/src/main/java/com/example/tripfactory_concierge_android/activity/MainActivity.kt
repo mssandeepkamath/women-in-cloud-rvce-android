@@ -57,11 +57,16 @@ class MainActivity : AppCompatActivity() {
                 R.id.dlInternship -> {
                     intentProvider(InternshipActivity())
                 }
-                R.id.document -> {
-                    intentProvider(ProjectActivity())
+                R.id.dlEvent -> {
+                    intentProvider(EventActivity())
+                }bb
+                R.id.workspace -> {
+                    intentProvider(VoucherActivity())
                 }
-                R.id.account -> {
-                    intentProvider(AccountActivity())
+                R.id.about_us -> {
+                    var intent = Intent(Intent.ACTION_VIEW)
+                    intent.data=Uri.parse("https://womenincloud.com/about-us/")
+                    startActivity(intent)
                 }
                 R.id.rate_us -> {
                     val playStoreIntent = Intent(Intent.ACTION_VIEW)

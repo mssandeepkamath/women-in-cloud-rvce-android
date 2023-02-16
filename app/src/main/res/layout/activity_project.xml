@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/lytRel"
     tools:context=".activity.ProjectActivity">
 
@@ -45,16 +46,14 @@
         android:id="@+id/lytRefresh"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_centerInParent="true"
         android:layout_below="@+id/topBar"
-        >
+        android:layout_centerInParent="true">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/vwRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#A0A0A0"
-            />
+            android:background="#393939" />
 
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
@@ -67,13 +66,27 @@
         android:background="@color/black"
         >
 
-        <ProgressBar
+        <com.skyfishjy.library.RippleBackground
             android:id="@+id/barProgress"
-            android:layout_width="@dimen/_75sdp"
-            android:layout_height="@dimen/_75sdp"
-            android:indeterminateTint="@color/green"
-            android:layout_centerInParent="true"
-            />
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            app:rb_color="#FAFF00DD"
+            app:rb_radius="32dp"
+            app:rb_rippleAmount="2"
+            app:rb_duration="1500"
+            app:rb_scale="3.5">
+
+            <ImageView
+                android:id="@+id/imgLogo"
+                android:layout_width="@dimen/_125sdp"
+                android:layout_height="@dimen/_110sdp"
+                android:layout_centerInParent="true"
+                android:contentDescription="@string/company_logo"
+                android:scaleType="centerCrop"
+                android:src="@drawable/women_cloud_nobg" />
+
+        </com.skyfishjy.library.RippleBackground>
 
         <TextView
             android:id="@+id/txtError"

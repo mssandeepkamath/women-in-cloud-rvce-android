@@ -7,4 +7,11 @@
     android:background="@color/black"
     tools:context=".activity.ChatActivity">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/coming_soon"
+        android:scaleType="centerCrop"
+        />
+
 </LinearLayout>

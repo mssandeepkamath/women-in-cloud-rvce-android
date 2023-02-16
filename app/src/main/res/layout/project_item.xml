@@ -32,14 +32,12 @@
                     android:layout_weight="1.2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:backgroundTint="#FFC1C1"
+                    android:backgroundTint="#FFDFDF"
                     app:cardCornerRadius="@dimen/_50sdp"
                     android:layout_marginTop="@dimen/_12sdp"
                    android:layout_marginStart="@dimen/_5sdp"
                     android:layout_marginEnd="@dimen/_3sdp"
-                    android:foreground="?android:attr/selectableItemBackground"
-                    android:clickable="true"
-                    android:focusable="true"
+
                     >
 
                     <LinearLayout
@@ -92,7 +90,7 @@
                     android:layout_weight="0.8"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:backgroundTint="#CEFFBC"
+                    android:backgroundTint="#E2FFD7"
                     app:cardCornerRadius="@dimen/_20sdp"
                     android:layout_marginHorizontal="@dimen/_5sdp"
                     android:layout_marginTop="@dimen/_15sdp"
@@ -142,19 +140,73 @@
                 app:dividerColor="#00FFEA"
                 />
 
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/line"
+                android:layout_marginTop="@dimen/_2sdp"
+                />
+
+            <LinearLayout
+                android:weightSum="2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+                <TextView
+                    android:layout_weight="1"
+                    android:id="@+id/tvStart"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textStyle="normal"
+                    android:textAlignment="viewStart"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:textColor="@color/white"
+                    android:padding="@dimen/_2sdp"
+
+                    android:textSize="@dimen/_12sdp"
+                    android:singleLine="true"
+                    />
+
+                <TextView
+                    android:layout_weight="1"
+                    android:id="@+id/tvEnd"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textStyle="normal"
+                    android:textAlignment="viewEnd"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:textColor="@color/white"
+                    android:padding="@dimen/_2sdp"
+
+                    android:textSize="@dimen/_12sdp"
+                    android:singleLine="true"
+                    />
+
+            </LinearLayout>
+
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginHorizontal="@dimen/_5sdp"
+                app:dividerColor="#00FFEA"
+                />
+
+
             <TextView
                 android:id="@+id/tvDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:textAlignment="center"
-                android:layout_marginHorizontal="@dimen/_6sdp"
+                android:textStyle="normal"
+                android:textAlignment="viewStart"
+                android:layout_marginHorizontal="@dimen/_10sdp"
                 android:layout_marginTop="@dimen/_5sdp"
                 android:textColor="@color/white"
                 android:padding="@dimen/_2sdp"
-                android:text=""
                 android:textSize="@dimen/_13sdp"
-                android:lines="2"
+                android:maxLines="4"
                 />
 
             <com.google.android.material.button.MaterialButton
@@ -163,7 +215,7 @@
                 android:layout_height="@dimen/_42sdp"
                 android:layout_marginHorizontal="@dimen/_10sdp"
                 android:layout_marginTop="@dimen/_5sdp"
-                android:layout_marginBottom="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_7sdp"
                 android:text="View details"
                 android:textStyle="bold"
                 android:textSize="@dimen/_14sdp"

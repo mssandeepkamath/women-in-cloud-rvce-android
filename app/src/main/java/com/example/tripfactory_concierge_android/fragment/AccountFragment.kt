@@ -73,6 +73,9 @@ class AccountFragment : Fragment(), OnClickListener {
         bindingAccountFragment.lytReport.setOnClickListener(this)
         bindingAccountFragment.ivBack.setOnClickListener(this)
         bindingAccountFragment.ivHamburger.setOnClickListener(this)
+        bindingAccountFragment.lytContactUs.setOnClickListener(this)
+        bindingAccountFragment.lytAboutUs.setOnClickListener(this)
+
         return bindingAccountFragment.root
     }
 
@@ -81,7 +84,9 @@ class AccountFragment : Fragment(), OnClickListener {
         when (v?.id) {
 
             R.id.lytAboutUs -> {
-
+                var intent = Intent(Intent.ACTION_VIEW)
+                intent.data=Uri.parse("https://womenincloud.com/about-us/")
+                (activity as MainActivity).startActivity(intent)
             }
             R.id.lytReport -> {
                 val to = "msandeepcip@gmail.com"
@@ -94,6 +99,20 @@ class AccountFragment : Fragment(), OnClickListener {
                 val emailIntent = Intent(Intent.ACTION_VIEW)
                 emailIntent.data = Uri.parse(mailTo)
                 startActivity(emailIntent)
+            }
+            R.id.lytContactUs -> {
+
+                val to = "msandeepcip@gmail.com"
+                val subject = "NEED SUPPORT"
+                val body =
+                    "Please clearly mention your concern."
+                val mailTo = "mailto:" + to +
+                        "?&subject=" + Uri.encode(subject) +
+                        "&body=" + Uri.encode(body)
+                val emailIntent = Intent(Intent.ACTION_VIEW)
+                emailIntent.data = Uri.parse(mailTo)
+                (activity as MainActivity).startActivity(emailIntent)
+
             }
             R.id.lytLogOut -> {
                 auth.signOut()

@@ -12,47 +12,30 @@
 
             <item
                 android:id="@+id/dlProject"
-                android:icon="@drawable/ic_recommendation"
+                android:icon="@drawable/ic_workspace"
                 android:title="Projects"
                 android:checkable="false"/>
             <item
                 android:id="@+id/dlInternship"
-                android:icon="@drawable/ic_chat"
+                android:icon="@drawable/ic_workspace"
                 android:title="Internships"
                 android:checkable="false"/>
             <item
-                android:id="@+id/document"
+                android:id="@+id/dlEvent"
                 android:icon="@drawable/ic_document"
                 android:title="Events"
                 android:checkable="false"/>
 
             <item
                 android:id="@+id/workspace"
-                android:icon="@drawable/ic_workspace"
-                android:title="Workspace"
+                android:icon="@drawable/ic_chat"
+                android:title="Chat Bot"
                 android:checkable="false"/>
 
-            <item
-                android:id="@+id/account"
-                android:icon="@drawable/ic_account"
-                android:title="Account"
-                android:checkable="false"/>
-
-            <item
-                android:id="@+id/archives"
-                android:icon="@drawable/ic_account"
-                android:title="Archives"
-                android:checkable="false"/>
-
-            <item
-                android:id="@+id/student_chapter"
-                android:icon="@drawable/ic_account"
-                android:title="Student Chapter"
-                android:checkable="false"/>
 
             <item
                 android:id="@+id/about_us"
-                android:icon="@drawable/ic_account"
+                android:icon="@drawable/ic_about_us"
                 android:title="About us"
                 android:checkable="false"/>
 

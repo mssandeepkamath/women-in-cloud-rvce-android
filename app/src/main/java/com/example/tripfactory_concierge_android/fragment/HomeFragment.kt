@@ -47,6 +47,10 @@ class HomeFragment : Fragment(), OnClickListener {
         bindingHomeFragment.ivHamburger.setOnClickListener(this)
         bindingHomeFragment.lytProjects.setOnClickListener(this)
         bindingHomeFragment.lytInternship.setOnClickListener(this)
+        bindingHomeFragment.lytEvent.setOnClickListener(this)
+        bindingHomeFragment.lytmore.setOnClickListener(this)
+        bindingHomeFragment.lytstudents.setOnClickListener(this)
+        bindingHomeFragment.lytarchives.setOnClickListener(this)
 
         bindingHomeFragment.carousel.registerLifecycle(viewLifecycleOwner)
         list.add(CarouselItem(imageDrawable = R.drawable.p2580883_51954099567_o))
@@ -56,7 +60,11 @@ class HomeFragment : Fragment(), OnClickListener {
         list.add(CarouselItem(imageDrawable = R.drawable.p2580986_51955162953_o))
         list.add(CarouselItem(imageDrawable = R.drawable.p2580997_51955688650_o))
 
+
+
+
         bindingHomeFragment.carousel.setData(list);
+
         return bindingHomeFragment.root
     }
 
@@ -70,6 +78,18 @@ class HomeFragment : Fragment(), OnClickListener {
             }
             R.id.lytInternship -> {
                 intentProvider(InternshipActivity())
+            }
+            R.id.lytEvent-> {
+                intentProvider(EventActivity())
+            }
+            R.id.lytmore-> {
+                bindingMainActivity.lytDrawer.openDrawer(GravityCompat.START)
+            }
+            R.id.lytarchives-> {
+                intentProvider(ChatActivity())
+            }
+            R.id.lytstudents-> {
+                intentProvider(ChatActivity())
             }
         }
     }
@@ -94,7 +114,7 @@ class HomeFragment : Fragment(), OnClickListener {
             }
         )
 
-        (0..40).map {
+        (0..25).map {
             TextTagItem(text = "Member: $it")
         }.toList().let {
             bindingHomeFragment.tagSphereView.addTagList(it)

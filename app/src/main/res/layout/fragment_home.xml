@@ -245,7 +245,7 @@
                             android:layout_marginTop="@dimen/_5sdp"
                             android:fontFamily="sans-serif"
                             android:singleLine="true"
-                            android:text="Archives"
+                            android:text="Stats"
                             android:textColor="@color/white"
                             android:textSize="@dimen/_12sdp"
                             android:textStyle="normal" />
@@ -325,6 +325,252 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_14sdp"
                     android:layout_marginTop="@dimen/_20sdp"
+                    android:fontFamily="sans-serif"
+                    android:gravity="top"
+                    android:singleLine="true"
+                    android:text="WIC Founding Members:"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14sdp"
+                    android:textStyle="normal" />
+
+                <HorizontalScrollView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                     android:scrollbars="none"
+                    android:layout_marginHorizontal="@dimen/_2sdp"
+                    android:scrollX="@dimen/_50sdp"
+                    >
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        >
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="@dimen/_100sdp"
+                            android:layout_gravity="center"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/_15sdp"
+                            android:layout_marginLeft="@dimen/_15sdp"
+                            app:cardBackgroundColor="@color/black"
+                            app:cardCornerRadius="@dimen/_20sdp"
+                            app:cardElevation="@dimen/_2sdp"
+                            >
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                >
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:layout_width="match_parent"
+                                        android:src="@drawable/f_1"
+                                        android:layout_height="@dimen/_100sdp"
+                                        android:layout_gravity="center"
+                                        android:scaleType="centerCrop" />
+
+                                </LinearLayout>
+
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:fontFamily="sans-serif"
+                                    android:padding="@dimen/_2sdp"
+                                    android:textColor="@color/white"
+                                    android:layout_marginBottom="@dimen/_2sdp"
+                                    android:layout_marginTop="@dimen/_2sdp"
+                                    android:textSize="@dimen/_10sdp"
+                                    android:text="Gretchen O’Hara"
+                                    android:singleLine="true"
+                                    android:textStyle="bold" />
+
+
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="@dimen/_100sdp"
+                            android:layout_gravity="center"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/_15sdp"
+                            android:layout_marginLeft="@dimen/_15sdp"
+                            app:cardBackgroundColor="@color/black"
+                            app:cardCornerRadius="@dimen/_20sdp"
+                            app:cardElevation="@dimen/_2sdp"
+                            >
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                >
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:src="@drawable/f_2"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="@dimen/_100sdp"
+                                        android:layout_gravity="center"
+                                        android:scaleType="centerCrop" />
+
+                                </LinearLayout>
+
+
+                                <TextView
+                                    android:text="Chaitra Vedullapalli"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:fontFamily="@font/roboto"
+                                    android:padding="@dimen/_2sdp"
+                                    android:textColor="@color/white"
+                                    android:layout_marginBottom="@dimen/_2sdp"
+                                    android:layout_marginTop="@dimen/_2sdp"
+                                    android:layout_marginStart="@dimen/_2sdp"
+                                    android:layout_marginEnd="@dimen/_2sdp"
+                                    android:textSize="@dimen/_10sdp"
+                                    android:singleLine="true"
+                                    android:textStyle="bold" />
+
+
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="@dimen/_100sdp"
+                            android:layout_gravity="center"
+                            android:layout_height="wrap_content"
+
+
+                            android:layout_marginRight="@dimen/_15sdp"
+                            android:layout_marginLeft="@dimen/_15sdp"
+                            app:cardBackgroundColor="@color/black"
+                            app:cardCornerRadius="@dimen/_20sdp"
+                            app:cardElevation="@dimen/_2sdp"
+                            >
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                >
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:src="@drawable/f_3"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="@dimen/_100sdp"
+                                        android:layout_gravity="center"
+                                        android:scaleType="centerCrop" />
+
+                                </LinearLayout>
+
+
+                                <TextView
+                                    android:text="Karen Fassio"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:fontFamily="@font/roboto"
+                                    android:padding="@dimen/_2sdp"
+                                    android:textColor="@color/white"
+                                    android:layout_marginBottom="@dimen/_2sdp"
+                                    android:layout_marginTop="@dimen/_2sdp"
+                                    android:textSize="@dimen/_10sdp"
+                                    android:letterSpacing="0.01"
+                                    android:textStyle="bold" />
+
+
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="@dimen/_100sdp"
+                            android:layout_gravity="center"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/_15sdp"
+                            android:layout_marginLeft="@dimen/_15sdp"
+                            app:cardBackgroundColor="@color/black"
+                            app:cardCornerRadius="@dimen/_20sdp"
+                            app:cardElevation="@dimen/_2sdp"
+                            >
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                >
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:src="@drawable/f_4"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="@dimen/_100sdp"
+                                        android:layout_gravity="center"
+                                        android:scaleType="centerCrop" />
+
+                                </LinearLayout>
+
+
+                                <TextView
+                                    android:text="Carrie Francey"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:fontFamily="@font/roboto"
+                                    android:padding="@dimen/_2sdp"
+                                    android:textColor="@color/white"
+                                    android:layout_marginBottom="@dimen/_2sdp"
+                                    android:layout_marginTop="@dimen/_2sdp"
+                                    android:textSize="@dimen/_10sdp"
+                                    android:letterSpacing="0.01"
+                                    android:textStyle="bold" />
+
+
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+
+                </HorizontalScrollView>
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_14sdp"
+                    android:layout_marginTop="@dimen/_2sdp"
                     android:fontFamily="sans-serif"
                     android:gravity="top"
                     android:singleLine="true"

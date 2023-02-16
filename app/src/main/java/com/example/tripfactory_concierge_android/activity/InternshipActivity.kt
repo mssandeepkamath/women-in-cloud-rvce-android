@@ -14,7 +14,6 @@ import com.example.tripfactory_concierge_android.R
 import com.example.tripfactory_concierge_android.adapter.InternshipAdapter
 import com.example.tripfactory_concierge_android.adapter.ProjectAdapter
 import com.example.tripfactory_concierge_android.databinding.ActivityInternshipBinding
-import com.example.tripfactory_concierge_android.databinding.ActivityProjectBinding
 import com.example.tripfactory_concierge_android.entity.Internship
 import com.example.tripfactory_concierge_android.entity.Project
 import com.example.tripfactory_concierge_android.util.ConnectionManager
@@ -23,6 +22,9 @@ import com.google.firebase.auth.FirebaseAuth
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
+import java.util.*
+import kotlin.collections.ArrayList
+import kotlin.collections.HashMap
 
 class InternshipActivity : AppCompatActivity() {
     lateinit var itemArray: ArrayList<Internship>
@@ -34,13 +36,16 @@ class InternshipActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         bindingProjectActivity = ActivityInternshipBinding.inflate(layoutInflater)
         setContentView(bindingProjectActivity.root)
-        var runnable: Runnable? = null
+        bindingProjectActivity.ivBack.setOnClickListener {
+            finish()
+        }
         layoutManager = LinearLayoutManager(this)
         bindingProjectActivity.lytRefresh.setColorSchemeColors(
             ContextCompat.getColor(this, R.color.green),
             ContextCompat.getColor(this, R.color.red)
         );
         bindingProjectActivity.lytProgress.visibility = View.VISIBLE
+       bindingProjectActivity.barProgress.startRippleAnimation()
         bindingProjectActivity.txtError.visibility = View.GONE
         auth = FirebaseAuth.getInstance()
 
@@ -50,17 +55,11 @@ class InternshipActivity : AppCompatActivity() {
             SwipeRefreshLayout.OnRefreshListener {
 
             override fun onRefresh() {
-                itemArray.clear()
                 bindingProjectActivity.vwRecyclerView.adapter?.notifyDataSetChanged()
-                bindingProjectActivity.lytProgress.visibility = View.VISIBLE
-                bindingProjectActivity.barProgress.visibility = View.VISIBLE
-                bindingProjectActivity.txtError.visibility = View.GONE
-                Handler().postDelayed(
-                    Runnable {
-                        bindingProjectActivity.lytRefresh.isRefreshing = false
-                        volleyGetRequest()
-                    }, 500
-                )
+//                bindingProjectActivity.lytProgress.visibility = View.VISIBLE
+//                bindingProjectActivity.barProgress.visibility = View.VISIBLE
+//                bindingProjectActivity.txtError.visibility = View.GONE
+                volleyGetRequest()
             }
         })
 
@@ -77,23 +76,27 @@ class InternshipActivity : AppCompatActivity() {
                     try {
                         val jsonArray: JSONArray = response
                         bindingProjectActivity.lytProgress.visibility = View.GONE
+                        itemArray.clear()
                         for (i in 0 until jsonArray.length()) {
                             val jsonObject: JSONObject = jsonArray.getJSONObject(i)
+                            val id :Int=jsonObject.getInt("internship_id")
                             val company_name: String = jsonObject.getString("company_name")
                             val opening: String =
                                 "Vacancy: " + jsonObject.getInt("opening").toString()
                             val description: String =
-                                "Description: " + jsonObject.getString("role_description")
+                                "Role description: " + jsonObject.getString("role_description").uppercase(Locale.getDefault())
                             val requirements: String = jsonObject.getString("requirements")
-                            val start_date: String = jsonObject.getString("start_date")
-                            val end_date: String = jsonObject.getString("end_date")
+                            val start_date: String ="Start: "+ jsonObject.getString("start_date").substring(0,10)
+                            val end_date: String = "End: "+jsonObject.getString("end_date").substring(0,10)
                             val manager: String = jsonObject.getString("manager")
                             val mode: String = jsonObject.getString("mode")
-                            val type: String = jsonObject.getString("type")
+                                .uppercase(Locale.getDefault())
+                            val type: String = jsonObject.getString("type").uppercase(Locale.getDefault())
                             println("Check point 3")
                             val location: String = jsonObject.getString("location")
                             itemArray.add(
                                 Internship(
+                                    id,
                                     company_name,
                                     opening,
                                     description,
@@ -113,9 +116,11 @@ class InternshipActivity : AppCompatActivity() {
                         bindingProjectActivity.vwRecyclerView.layoutManager = layoutManager
                         bindingProjectActivity.vwRecyclerView.adapter =
                             InternshipAdapter(this, itemArray)
+                        bindingProjectActivity.lytRefresh.isRefreshing = false
                     } catch (e: JSONException) {
                         bindingProjectActivity.lytProgress.visibility = View.VISIBLE
                         bindingProjectActivity.barProgress.visibility = View.GONE
+                        bindingProjectActivity.barProgress.stopRippleAnimation()
                         bindingProjectActivity.txtError.visibility = View.VISIBLE
                         ToastMessage("Some unexpected error occurred.")
                         println(e)
@@ -124,11 +129,13 @@ class InternshipActivity : AppCompatActivity() {
                 },
                 { error ->
                     bindingProjectActivity.barProgress.visibility = View.GONE
+                    bindingProjectActivity.barProgress.stopRippleAnimation()
                     bindingProjectActivity.txtError.visibility = View.VISIBLE
                     ToastMessage("Something went wrong..")
                     println("Error: $error")
                 }
-            ) {
+            )
+            {
                 override fun getHeaders(): MutableMap<String, String> {
                     val headers = HashMap<String, String>()
                     headers["User-Agent"] = "Mozilla/5.0"
@@ -143,6 +150,7 @@ class InternshipActivity : AppCompatActivity() {
 
         } else {
             bindingProjectActivity.barProgress.visibility = View.GONE
+            bindingProjectActivity.barProgress.stopRippleAnimation()
             bindingProjectActivity.txtError.visibility = View.VISIBLE
             ConnectionManager().createDialog(bindingProjectActivity.lytRel, this)
         }

@@ -32,11 +32,13 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         bindingSplashActivity= ActivitySplashBinding.inflate(layoutInflater)
         setContentView(bindingSplashActivity.root)
+        bindingSplashActivity.lytripple.startRippleAnimation()
         auth = FirebaseAuth.getInstance()
         val current_user = auth.currentUser
 
         android.os.Handler().postDelayed(
             {
+                bindingSplashActivity.lytripple.stopRippleAnimation()
                 if (current_user != null) {
                     if (ConnectionManager().checkConnectivity(this) == true)
                         intentProvider(MainActivity())
@@ -46,7 +48,7 @@ class SplashActivity : AppCompatActivity() {
                     intentProvider(LoginActivity())
                 }
 
-            }, 1500)
+            }, 2500)
     }
 
     private fun intentProvider(activity: Activity) {
