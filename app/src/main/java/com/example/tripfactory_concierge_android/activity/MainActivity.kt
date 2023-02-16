@@ -59,7 +59,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.dlEvent -> {
                     intentProvider(EventActivity())
-                }bb
+                }
                 R.id.workspace -> {
                     intentProvider(VoucherActivity())
                 }
