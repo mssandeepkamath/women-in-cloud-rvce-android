@@ -173,7 +173,7 @@ class DescriptionActivity : AppCompatActivity() {
     fun getUsn(email :String?)
     {
         val request = StringRequest(
-            Request.Method.GET, "https://restfulapiworkspacemanagement-production.up.railway.app/usn/${email}",
+            Request.Method.GET, "https://springbootapi-production-c1e0.up.railway.app/usn/${email}",
             {
                 print("Answer : " + it.toString())
                 usn=it.toString();

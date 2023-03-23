@@ -27,12 +27,12 @@
     <string name="account_name">Your Account</string>
     <string name="add_your_privacy_policy_here">Add your privacy policy here</string>
     <string name="Workspace">Workspace</string>
-    <string name="register_user">https://restfulapiworkspacemanagement-production.up.railway.app/register-student</string>
-    <string name="projectsList">https://restfulapiworkspacemanagement-production.up.railway.app/projects</string>
+    <string name="register_user">https://springbootapi-production-c1e0.up.railway.app/register-student</string>
+    <string name="projectsList">https://springbootapi-production-c1e0.up.railway.app/projects</string>
     <string name="we_are_sorry_please_try_again">Something went wrong, Please try again</string>
-    <string name="internshipList">https://restfulapiworkspacemanagement-production.up.railway.app/internships</string>
-    <string name="eventList">https://restfulapiworkspacemanagement-production.up.railway.app/events</string>
-    <string name="applyProject">https://restfulapiworkspacemanagement-production.up.railway.app/apply-project</string>
-    <string name="applyInternship">https://restfulapiworkspacemanagement-production.up.railway.app/apply-internship</string>
-    <string name="applyEvent">https://restfulapiworkspacemanagement-production.up.railway.app/apply-event</string>
+    <string name="internshipList">https://springbootapi-production-c1e0.up.railway.app/internships</string>
+    <string name="eventList">https://springbootapi-production-c1e0.up.railway.app/events</string>
+    <string name="applyProject">https://springbootapi-production-c1e0.up.railway.app/apply-project</string>
+    <string name="applyInternship">https://springbootapi-production-c1e0.up.railway.app/apply-internship</string>
+    <string name="applyEvent">https://springbootapi-production-c1e0.up.railway.app/apply-event</string>
 </resources>
