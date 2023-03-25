@@ -70,7 +70,7 @@ class RegisterActivity : AppCompatActivity() {
             val phonenum=bindingRegisterActivity.phonecon.text.toString().trim()
             val USN =bindingRegisterActivity.addresscon.text.toString()
             val batch=bindingRegisterActivity.batchicon.text.toString()
-            val dept=email[email.indexOf(".")+1].toString()+email[email.indexOf(".")+2].toString()
+            var dept=email[email.indexOf(".")+1].toString()+email[email.indexOf(".")+2].toString()
 
 
             if(namee.isEmpty() || USN.isEmpty() || phonenum.isEmpty() || email.isEmpty() || password.isEmpty() || repassword.isEmpty() || batch.isEmpty())
@@ -101,6 +101,15 @@ class RegisterActivity : AppCompatActivity() {
                             try {
                                 jsonObject.put("usn", USN)
                                 jsonObject.put("batch", batch)
+                                when(dept) {
+                                    "is"-> dept = "Information Science and Engineering"
+                                    "cs"-> dept = "Computer Science and Engineering"
+                                    "ec" -> dept = "Electronics and Engineering"
+                                    "et" -> dept = "Electrical and Telecommunication"
+                                    "bt" -> dept = "Bio technology and Engineering"
+                                    "me" -> dept= "Mechanical Engineering"
+                                    "cv" -> dept= "Civil Engineering"
+                                }
                                 jsonObject.put("department",dept)
                                 jsonObject.put("email_id", email)
                                 jsonObject.put("student_first_name", namee.substringBeforeLast(" ").toString())
