@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/height_of_nav_main"
+    android:background="@drawable/nav_header_main_background"
+    android:gravity="bottom"
+    android:theme="@style/ThemeOverlay.MaterialComponents.Dark">
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/nav_user_image"
+        android:layout_width="@dimen/nav_image_size"
+        android:layout_height="@dimen/nav_image_size"
+        android:layout_marginStart="@dimen/nav_content_margin_StartEnd"
+        android:layout_marginEnd="@dimen/nav_content_margin_StartEnd"
+        app:civ_border_color="@color/white"
+        app:civ_border_width="@dimen/nav_image_circular_border_width"
+        android:contentDescription="@string/image_contentDescription"
+        android:src="@drawable/placeholder"/>
+
+    <TextView
+        android:id="@+id/tv_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/nav_content_margin_StartEnd"
+        android:layout_marginTop="@dimen/nav_content_margin_top"
+        android:layout_marginEnd="@dimen/nav_content_margin_StartEnd"
+        android:layout_marginBottom="@dimen/nav_content_margin_bottom"
+        android:textColor="@android:color/white"
+        android:textStyle="normal"
+        android:textSize="@dimen/nav_user_name_text_size"
+        tools:text="Username" />
+    
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/nav_divider_height"
+        android:background="@color/colorAccent"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black">
+
+        <ImageView
+            android:id="@+id/img_home"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_centerVertical="true"
+            android:scaleType="centerCrop"
+            android:layout_marginStart="@dimen/_7sdp"
+            android:src="@drawable/women_cloud"
+            android:contentDescription="@string/company_logo" />
+
+
+        <ImageView
+            android:layout_toRightOf="@id/img_home"
+            android:id="@+id/rv_img"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_centerVertical="true"
+            android:scaleType="centerInside"
+            android:layout_marginStart="@dimen/_7sdp"
+            android:src="@drawable/rvce_logo"
+            android:contentDescription="@string/company_logo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_margin="@dimen/_10sdp"
+            android:layout_toEndOf="@id/rv_img"
+            android:text="Welcome to Workloud"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12sdp"
+            android:singleLine="true"
+            android:textStyle="normal" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_below="@id/rv_img"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            app:dividerColor="@color/colorAccent"
+            android:layout_marginVertical="@dimen/_10sdp"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            />
+
+
+
+
+    </RelativeLayout>
+
+
+
+</LinearLayout>

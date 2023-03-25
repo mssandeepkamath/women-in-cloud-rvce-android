@@ -367,7 +367,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif"
-                    android:text="Resources Provided:"
+                    android:text="Location:"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_13sdp"
                     android:layout_marginHorizontal="@dimen/_10sdp"

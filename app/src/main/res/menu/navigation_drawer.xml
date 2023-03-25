@@ -12,18 +12,24 @@
 
             <item
                 android:id="@+id/dlProject"
-                android:icon="@drawable/ic_workspace"
+                android:icon="@drawable/baseline_architecture_24"
                 android:title="Projects"
                 android:checkable="false"/>
             <item
                 android:id="@+id/dlInternship"
-                android:icon="@drawable/ic_workspace"
+                android:icon="@drawable/baseline_hail_24"
                 android:title="Internships"
                 android:checkable="false"/>
             <item
                 android:id="@+id/dlEvent"
-                android:icon="@drawable/ic_document"
+                android:icon="@drawable/baseline_event_24"
                 android:title="Events"
+                android:checkable="false"/>
+
+            <item
+                android:id="@+id/workloud"
+                android:icon="@drawable/ic_workspace"
+                android:title="Workloud"
                 android:checkable="false"/>
 
             <item
@@ -32,19 +38,18 @@
                 android:title="Chat Bot"
                 android:checkable="false"/>
 
-
             <item
-                android:id="@+id/about_us"
-                android:icon="@drawable/ic_about_us"
-                android:title="About us"
+                android:id="@+id/account"
+                android:icon="@drawable/ic_account"
+                android:title="Account"
                 android:checkable="false"/>
+
 
         </menu>
 
     </item>
 
     </group>
-
 
     <group
         android:id="@+id/grpExtras">
@@ -55,6 +60,13 @@
 
             <menu>
 
+
+                <item
+                    android:id="@+id/about_us"
+                    android:icon="@drawable/ic_about_us"
+                    android:title="About us"
+                    android:checkable="false"/>
+
                 <item
                     android:id="@+id/rate_us"
                     android:icon="@drawable/ic_rate_us"
@@ -64,6 +76,11 @@
                     android:id="@+id/privacy"
                     android:icon="@drawable/ic_privacy"
                     android:title="@string/privacy_policy"
+                    android:checkable="false"/>
+                <item
+                    android:id="@+id/bug"
+                    android:icon="@drawable/baseline_bug_report_24"
+                    android:title="Report bug"
                     android:checkable="false"/>
 
             </menu>

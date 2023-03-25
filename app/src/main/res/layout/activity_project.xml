@@ -73,8 +73,8 @@
             android:layout_gravity="center"
             app:rb_color="#FAFF00DD"
             app:rb_radius="32dp"
-            app:rb_rippleAmount="2"
-            app:rb_duration="1500"
+            app:rb_rippleAmount="1"
+            app:rb_duration="2000"
             app:rb_scale="3.5">
 
             <ImageView

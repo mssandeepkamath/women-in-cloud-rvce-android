@@ -48,7 +48,7 @@ class SplashActivity : AppCompatActivity() {
                     intentProvider(LoginActivity())
                 }
 
-            }, 2500)
+            }, 1500)
     }
 
     private fun intentProvider(activity: Activity) {

@@ -77,6 +77,39 @@ class MainActivity : AppCompatActivity() {
                 R.id.privacy -> {
                     intentProvider(PrivacyPolicyActivity())
                 }
+
+                R.id.workloud -> {
+
+                    replaceFragment(
+                        bindingMainActivity.lytFrame.id,
+                        SupportChatFragment(),
+                        "SupportChatFragment"
+                    )
+                    bindingMainActivity.vwBottomNavigation.menu.findItem(R.id.workspace).isChecked=true
+                    bindingMainActivity.lytDrawer.closeDrawers()
+                }
+                R.id.account -> {
+                    replaceFragment(
+                        bindingMainActivity.lytFrame.id,
+                        AccountFragment(),
+                        "AccountFragment"
+                    )
+                    bindingMainActivity.vwBottomNavigation.menu.findItem(R.id.account).isChecked=true
+                    bindingMainActivity.lytDrawer.closeDrawers()
+                }
+
+                R.id.bug -> {
+                    val to = "msandeepcip@gmail.com"
+                    val subject = "I FOUND A BUG IN WIC-RVCE ANDROID APP!"
+                    val body =
+                        "Please clearly mention page name, bug description, and other useful details here."
+                    val mailTo = "mailto:" + to +
+                            "?&subject=" + Uri.encode(subject) +
+                            "&body=" + Uri.encode(body)
+                    val emailIntent = Intent(Intent.ACTION_VIEW)
+                    emailIntent.data = Uri.parse(mailTo)
+                    startActivity(emailIntent)
+                }
             }
             return@setNavigationItemSelectedListener true
         }

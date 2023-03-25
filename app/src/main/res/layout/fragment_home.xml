@@ -37,14 +37,14 @@
 
                 <ImageView
                     android:id="@+id/women_logo"
-                    android:layout_width="@dimen/_70sdp"
+                    android:layout_width="@dimen/_60sdp"
                     android:layout_height="@dimen/_60sdp"
                     android:contentDescription="women_cloud"
                     android:scaleType="centerCrop"
                     android:src="@drawable/women_cloud" />
 
                 <ImageView
-                    android:layout_width="@dimen/_70sdp"
+                    android:layout_width="@dimen/_60sdp"
                     android:layout_height="@dimen/_55sdp"
                     android:layout_toRightOf="@id/women_logo"
                     android:contentDescription="rvce image"
@@ -194,7 +194,7 @@
                             android:layout_height="@dimen/_60sdp"
                             android:layout_gravity="center"
                             android:contentDescription="restroom image"
-                            android:src="@drawable/event" />
+                            android:src="@drawable/lecture" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -236,7 +236,7 @@
                             android:layout_height="@dimen/_60sdp"
                             android:layout_gravity="center"
                             android:contentDescription="project image"
-                            android:src="@drawable/archive" />
+                            android:src="@drawable/teamwork" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -245,7 +245,7 @@
                             android:layout_marginTop="@dimen/_5sdp"
                             android:fontFamily="sans-serif"
                             android:singleLine="true"
-                            android:text="Stats"
+                            android:text="Workloud"
                             android:textColor="@color/white"
                             android:textSize="@dimen/_12sdp"
                             android:textStyle="normal" />
@@ -269,7 +269,7 @@
                             android:layout_height="@dimen/_60sdp"
                             android:layout_gravity="center"
                             android:contentDescription="place image"
-                            android:src="@drawable/diversity" />
+                            android:src="@drawable/friend" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -278,7 +278,7 @@
                             android:layout_marginTop="@dimen/_5sdp"
                             android:fontFamily="sans-serif"
                             android:singleLine="true"
-                            android:text="Student Chapter"
+                            android:text="Chat Assistant"
                             android:textColor="@color/white"
                             android:textSize="@dimen/_12sdp"
                             android:textStyle="normal" />
@@ -583,7 +583,47 @@
                     android:id="@+id/tagSphereView"
                     android:layout_width="@dimen/_280sdp"
                     android:layout_height="@dimen/_300sdp"
-                    android:layout_gravity="center_horizontal" />
+                    android:layout_gravity="center" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_14sdp"
+                    android:fontFamily="sans-serif"
+                    android:gravity="top"
+                    android:singleLine="true"
+                    android:text="Introducing Workloud on Android:"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14sdp"
+                    android:textStyle="normal" />
+
+                <ImageView
+                    android:layout_width="@dimen/_200sdp"
+                    android:layout_height="@dimen/_200sdp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:contentDescription="@string/image_contentDescription"
+                    android:src="@drawable/ic_task_image" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/intro_text_marginStartEnd"
+                    android:layout_marginTop="@dimen/intro_text_marginTop"
+                    android:layout_marginEnd="@dimen/intro_text_marginStartEnd"
+                    android:gravity="center"
+                    android:lineSpacingExtra="@dimen/intro_text_line_spacing_extra"
+                    android:text="@string/intro_text_description"
+                    android:textColor="@color/secondary_text_color"
+                    android:textSize="@dimen/_12sdp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="👇"
+                    android:textSize="@dimen/_15sdp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"

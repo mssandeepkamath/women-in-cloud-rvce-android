@@ -6,7 +6,10 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Gravity
 import android.widget.Toast
+import com.android.volley.NetworkResponse
 import com.android.volley.Request
+import com.android.volley.Response
+import com.android.volley.VolleyError
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.StringRequest
 import com.example.tripfactory_concierge_android.R
@@ -22,6 +25,7 @@ import com.google.firebase.auth.UserProfileChangeRequest
 import com.thecode.aestheticdialogs.*
 import org.json.JSONException
 import org.json.JSONObject
+import java.net.HttpURLConnection
 
 class DescriptionActivity : AppCompatActivity() {
     private lateinit var bindingProjectDescriptionActivity: ActivityProjectDescriptionBinding
@@ -95,6 +99,7 @@ class DescriptionActivity : AppCompatActivity() {
                 try {
                     jsonObject.put("USN", usn)
                     jsonObject.put("internship_id", internship.id)
+                    println("input: ${jsonObject.toString()}")
                 } catch (e: JSONException) {
                     e.printStackTrace()
                 }
@@ -127,36 +132,60 @@ class DescriptionActivity : AppCompatActivity() {
     }
 
     fun volleyHttpPost(jsonObject: JSONObject,url : String) {
-
-        println(jsonObject)
-
+        var statusCode: Int = 0
         val jsonObjectRequest = object : JsonObjectRequest(
             Request.Method.POST, url, jsonObject,
             {
 
             },{
-
-               var content = if(url.contains("add-event")) {
-                    "Registration successful, Thank you for your interest in WIC."
-                } else {
-                    "Your application has been submitted. We will get back to you after reviewing the same."
-                }
-                Log.e("IMP",it.toString())
-                AestheticDialog.Builder(this,
-                    DialogStyle.FLASH,
-                    DialogType.SUCCESS)
-                    .setTitle("Congratulations")
-                    .setMessage(content)
-                    .setCancelable(false)
-                    .setDarkMode(true)
-                    .setGravity(Gravity.CENTER)
-                    .setAnimation(DialogAnimation.SHRINK)
-                    .setOnClickListener(object : OnDialogClickListener {
-                        override fun onClick(dialog: AestheticDialog.Builder) {
-                            dialog.dismiss()
+                println(statusCode)
+                when(statusCode) {
+                    200 -> {
+                        var content = if(url.contains("add-event")) {
+                            "Registration successful, Thank you for your interest in WIC."
+                        } else {
+                            "Your application has been submitted. We will get back to you after reviewing the same."
                         }
-                    })
-                    .show()
+                        AestheticDialog.Builder(this@DescriptionActivity,
+                            DialogStyle.FLASH,
+                            DialogType.SUCCESS)
+                            .setTitle("Congratulations")
+                            .setMessage(content)
+                            .setCancelable(false)
+                            .setDarkMode(true)
+                            .setGravity(Gravity.CENTER)
+                            .setAnimation(DialogAnimation.SHRINK)
+                            .setOnClickListener(object : OnDialogClickListener {
+                                override fun onClick(dialog: AestheticDialog.Builder) {
+                                    dialog.dismiss()
+                                }
+                            })
+                            .show()
+                    }
+                    500 -> {
+                        var content = if(url.contains("add-event")) {
+                            "Registration failed, Please try again or email us the issue"
+                        } else {
+                            "Sorry, You have a ongoing Project/Internship and we do not allow multiple applications. Feel free to email us."
+                        }
+                        AestheticDialog.Builder(this@DescriptionActivity,
+                            DialogStyle.FLASH,
+                            DialogType.ERROR)
+                            .setTitle("Attention")
+                            .setMessage(content)
+                            .setCancelable(false)
+                            .setDarkMode(true)
+                            .setGravity(Gravity.CENTER)
+                            .setAnimation(DialogAnimation.SHRINK)
+                            .setOnClickListener(object : OnDialogClickListener {
+                                override fun onClick(dialog: AestheticDialog.Builder) {
+                                    dialog.dismiss()
+                                }
+                            })
+                            .show()
+                    }
+                }
+
             })
         {
             override fun getHeaders(): MutableMap<String, String> {
@@ -165,6 +194,16 @@ class DescriptionActivity : AppCompatActivity() {
                 headers["Content-Type"] = "application/json"
                 return headers
             }
+
+            override fun parseNetworkResponse(response: NetworkResponse?): Response<JSONObject> {
+                statusCode = response!!.statusCode
+                return super.parseNetworkResponse(response)
+            }
+
+            override fun parseNetworkError(volleyError: VolleyError?): VolleyError {
+                statusCode = volleyError!!.networkResponse!!.statusCode
+                return super.parseNetworkError(volleyError)
+            }
         }
         RequestQueueSingleton.getInstance(applicationContext)
             .addToRequestQueue(jsonObjectRequest)
@@ -172,11 +211,10 @@ class DescriptionActivity : AppCompatActivity() {
 
     fun getUsn(email :String?)
     {
-        val request = StringRequest(
-            Request.Method.GET, "https://springbootapi-production-c1e0.up.railway.app/usn/${email}",
+        val request = JsonObjectRequest(
+            Request.Method.GET, "https://springbootapi-production-c1e0.up.railway.app/usn/${email}",null,
             {
-                print("Answer : " + it.toString())
-                usn=it.toString();
+                usn = it.getString("USN")
             },{
                 Toast.makeText(this,it.message,Toast.LENGTH_LONG).show()
             })

@@ -14,23 +14,12 @@
 
         <ImageView
             android:id="@+id/img_home"
-            android:layout_width="@dimen/_90sdp"
+            android:layout_width="@dimen/_80sdp"
             android:layout_height="@dimen/_60sdp"
             android:layout_centerVertical="true"
             android:scaleType="centerCrop"
             android:layout_marginStart="@dimen/_7sdp"
             android:src="@drawable/women_cloud"
-            android:contentDescription="@string/company_logo" />
-
-
-        <ImageView
-            android:layout_toRightOf="@id/img_home"
-            android:layout_width="@dimen/_90sdp"
-            android:layout_height="@dimen/_60sdp"
-            android:layout_centerVertical="true"
-            android:scaleType="centerInside"
-            android:layout_marginStart="@dimen/_7sdp"
-            android:src="@drawable/rvce_logo"
             android:contentDescription="@string/company_logo" />
 
     </RelativeLayout>

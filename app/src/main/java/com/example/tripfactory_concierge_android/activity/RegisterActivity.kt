@@ -6,6 +6,7 @@ import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.VolleyError
@@ -13,7 +14,11 @@ import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.example.tripfactory_concierge_android.R
 import com.example.tripfactory_concierge_android.databinding.ActivityRegisterBinding
+import com.example.tripfactory_concierge_android.firebase.FirestoreClass
+import com.example.tripfactory_concierge_android.models.User
+import com.example.tripfactory_concierge_android.ui.activities.MainActivity
 import com.example.tripfactory_concierge_android.util.RequestQueueSingleton
+import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.UserProfileChangeRequest
 import org.json.JSONException
@@ -113,6 +118,8 @@ class RegisterActivity : AppCompatActivity() {
                                     val userprofilename= UserProfileChangeRequest.Builder()
                                         .setDisplayName(namee)
                                         .build()
+                                    val user = User(authh.currentUser!!.uid, namee,email)
+                                    FirestoreClass().registerUser(this, user)
                                     authh.currentUser!!.updateProfile(userprofilename)
                                     Toast.makeText(this, "Successfully registered", Toast.LENGTH_LONG).show()
                                     val intent = Intent(this, LoginActivity::class.java)
@@ -133,8 +140,18 @@ class RegisterActivity : AppCompatActivity() {
 
     }
 
-
-
+    fun signInSuccess(loggedInUser: User?) {
+        if(loggedInUser != null){
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
+        }
+    }
+    fun showErrorSnackBar(message: String){
+        val snackBar = Snackbar.make(findViewById(android.R.id.content), message, Snackbar.LENGTH_LONG)
+        val snackBarView = snackBar.view
+        snackBarView.setBackgroundColor(ContextCompat.getColor(this, R.color.snackbar_error_color))
+        snackBar.show()
+    }
 
 
 

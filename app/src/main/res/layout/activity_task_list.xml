@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/workloud"
+    tools:context=".ui.activities.TaskListActivity">
+
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_task_list_activity"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:titleTextColor="@color/white"
+            android:theme="@style/CustomActionBar"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+
+    <LinearLayout
+        android:layout_below="@id/toolbar_task_list_activity"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/task_list_content_padding">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_task_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+</RelativeLayout>

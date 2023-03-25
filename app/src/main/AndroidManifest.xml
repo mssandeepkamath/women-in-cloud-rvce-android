@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -73,6 +74,58 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
+        <activity
+            android:name="com.example.tripfactory_concierge_android.ui.activities.CardDetailsActivity"
+            android:screenOrientation="portrait"
+        />
+
+        <activity
+            android:name="com.example.tripfactory_concierge_android.ui.activities.MembersActivity"
+            android:screenOrientation="portrait"
+       />
+        <activity
+            android:name="com.example.tripfactory_concierge_android.ui.activities.TaskListActivity"
+            android:screenOrientation="portrait"
+          />
+        <activity
+            android:name="com.example.tripfactory_concierge_android.ui.activities.CreateBoardActivity"
+            android:screenOrientation="portrait"
+          />
+        <activity
+            android:name="com.example.tripfactory_concierge_android.ui.activities.MyProfileActivity"
+            android:screenOrientation="portrait"
+          />
+        <activity android:name="com.example.tripfactory_concierge_android.ui.activities.BaseActivity" />
+        <activity
+            android:name="com.example.tripfactory_concierge_android.ui.activities.SigninActivity"
+            android:screenOrientation="portrait"
+          />
+        <activity
+            android:name="com.example.tripfactory_concierge_android.ui.activities.SignupActivity"
+            android:screenOrientation="portrait"
+    />
+        <activity
+            android:name="com.example.tripfactory_concierge_android.ui.activities.IntroActivity"
+            android:screenOrientation="portrait"
+           />
+        <activity
+            android:name="com.example.tripfactory_concierge_android.ui.activities.SplashActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name="com.example.tripfactory_concierge_android.ui.activities.MainActivity"
+            android:screenOrientation="portrait"
+/>
+
+        <service
+            android:name="com.example.tripfactory_concierge_android.fcm.MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
     </application>
 
 </manifest>

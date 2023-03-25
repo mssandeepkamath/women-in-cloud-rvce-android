@@ -36,7 +36,7 @@
                 android:layout_marginTop="@dimen/_20sdp"
                 android:fontFamily="sans-serif"
                 android:singleLine="true"
-                android:text="Chatbot"
+                android:text="Shena - Assistant"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_17sdp"
                 android:textStyle="bold" />
@@ -74,7 +74,7 @@
                     android:inputType="textEmailAddress"
                     android:paddingStart="10dp"
                     android:layout_marginVertical="@dimen/_10sdp"
-                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
                     android:hint="Type message here"
                     android:textAlignment="gravity"
                     android:textSize="17sp"
@@ -83,15 +83,16 @@
                     tools:ignore="RtlSymmetry" />
 
                 <!--button to send message-->
-                <ImageButton
+                <ImageView
                     android:id="@+id/idIBSend"
                     android:layout_width="0dp"
                     android:layout_height="@dimen/_40sdp"
                     android:layout_gravity="center_vertical"
                     android:layout_weight="1"
-                    android:background="@color/green"
-                    android:src="@android:drawable/ic_menu_send"
-                    app:tint="@color/black" />
+                    app:tint="@color/white"
+                    android:src="@drawable/ic_send"
+                    android:padding="@dimen/_5sdp"
+                     />
 
             </LinearLayout>
 

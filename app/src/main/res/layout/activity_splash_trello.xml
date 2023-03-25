@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".ui.activities.SplashActivity">
+
+    <com.skyfishjy.library.RippleBackground
+        android:id="@+id/lytripple"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        app:rb_color="#FAFF00DD"
+        app:rb_radius="32dp"
+        app:rb_rippleAmount="1"
+        app:rb_duration="2000"
+        app:rb_scale="3.5">
+
+        <ImageView
+            android:id="@+id/imgLogo"
+            android:layout_width="@dimen/_150sdp"
+            android:layout_height="@dimen/_110sdp"
+            android:layout_centerInParent="true"
+            android:contentDescription="@string/company_logo"
+            android:scaleType="centerCrop"
+            android:src="@drawable/women_cloud_nobg" />
+
+        <TextView
+            android:id="@+id/workloud"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imgLogo"
+            android:layout_centerInParent="true"
+            android:text="Workloud"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_20sdp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/workloud"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="@dimen/intro_text_marginStartEnd"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/intro_text_marginStartEnd"
+            android:gravity="center"
+            android:lineSpacingExtra="@dimen/intro_text_line_spacing_extra"
+            android:text="@string/intro_text_description"
+            android:textColor="@color/secondary_text_color"
+            android:textSize="@dimen/_12sdp" />
+
+    </com.skyfishjy.library.RippleBackground>
+
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        >
+
+        <ImageView
+            android:id="@+id/rvce"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_gravity="center"
+            android:contentDescription="@string/company_logo"
+            android:layout_alignParentBottom="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/rvce" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="@dimen/_7sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:layout_toRightOf="@id/rvce"
+            android:singleLine="true"
+            android:text="Organizing your Workloud, please wait.."
+            android:textColor="@color/secondary_text_color"
+            android:textSize="@dimen/_14sdp"
+            android:textStyle="normal" />
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

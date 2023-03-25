@@ -12,6 +12,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import com.example.tripfactory_concierge_android.R
 import com.example.tripfactory_concierge_android.activity.*
 import com.example.tripfactory_concierge_android.databinding.ActivityMainBinding
@@ -86,10 +87,11 @@ class HomeFragment : Fragment(), OnClickListener {
                 bindingMainActivity.lytDrawer.openDrawer(GravityCompat.START)
             }
             R.id.lytarchives-> {
-                intentProvider(ChatActivity())
+                (activity as MainActivity).supportFragmentManager.beginTransaction().replace(bindingMainActivity.lytFrame.id, SupportChatFragment(), tag).commit()
+                bindingMainActivity.vwBottomNavigation.menu.findItem(R.id.workspace).isChecked=true
             }
             R.id.lytstudents-> {
-                intentProvider(ChatActivity())
+                intentProvider(VoucherActivity())
             }
         }
     }
@@ -110,12 +112,12 @@ class HomeFragment : Fragment(), OnClickListener {
             TextPaint().apply {
                 isAntiAlias = true
                 textSize = resources.getDimension(com.intuit.sdp.R.dimen._15sdp)
-                color = Color.rgb(126, 106, 0)
+                color = resources.getColor(R.color.light_blue)
             }
         )
-
-        (0..25).map {
-            TextTagItem(text = "Member: $it")
+        val member = arrayListOf<String>("Chaitra Vedullapalli","Priya D","G S Mamatha","K N Subramanya","B M Sagar","Anala M R","Karen Fassio","Carrie Francey","Gretchen O'Hara","Smitha R","Shanmukha Nagaraj","Uma B V","Gina Fratarcangeli","Amy Protexter","Amy Protexter","Amy Protexter","Geetha Gandhi","Feranda Green","Syren Jordan","Rajiv Kapoor")
+        member.map {
+            TextTagItem(text = it)
         }.toList().let {
             bindingHomeFragment.tagSphereView.addTagList(it)
         }

@@ -1,5 +1,6 @@
 package com.example.tripfactory_concierge_android.activity;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -31,7 +32,7 @@ public class VoucherActivity extends AppCompatActivity  {
     // creating variables for our
     // widgets in xml file.
     private RecyclerView chatsRV;
-    private ImageButton sendMsgIB;
+    private ImageView sendMsgIB;
     private EditText userMsgEdt;
     private ImageView ivBack;
     private final String USER_KEY = "user";
@@ -127,7 +128,22 @@ public class VoucherActivity extends AppCompatActivity  {
                     // from json response and adding this response to our array list.
                     String botResponse = response.getString("cnt");
                     messageModalArrayList.add(new Message(botResponse, BOT_KEY));
+                    chatsRV.addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
+                        @Override
+                        public void onLayoutChange(View v,
+                                                   int left, int top, int right, int bottom,
+                                                   int oldLeft, int oldTop, int oldRight, int oldBottom) {
 
+                                chatsRV.postDelayed(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        chatsRV.smoothScrollToPosition(
+                                                chatsRV.getAdapter().getItemCount() - 1);
+                                    }
+                                }, 100);
+                            }
+
+                    });
                     // notifying our adapter as data changed.
                     messageRVAdapter.notifyDataSetChanged();
                 } catch (JSONException e) {
