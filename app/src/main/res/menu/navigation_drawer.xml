@@ -39,6 +39,12 @@
                 android:checkable="false"/>
 
             <item
+                android:id="@+id/staff"
+                android:icon="@drawable/ic_staff"
+                android:title="Our Staffs"
+                android:checkable="false"/>
+
+            <item
                 android:id="@+id/account"
                 android:icon="@drawable/ic_account"
                 android:title="Account"

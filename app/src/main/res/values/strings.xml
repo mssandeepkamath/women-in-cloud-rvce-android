@@ -25,11 +25,12 @@
     <string name="title_activity_place">PlaceActivity</string>
     <string name="documents_you_might_need">Documents you might need</string>
     <string name="account_name">Your Account</string>
-    <string name="add_your_privacy_policy_here">Add your privacy policy here</string>
+    <string name="add_your_privacy_policy_here">Your privacy policy</string>
     <string name="Workspace">Workspace</string>
     <string name="register_user">https://springbootapi-production-c1e0.up.railway.app/register-student</string>
     <string name="student">https://springbootapi-production-c1e0.up.railway.app/student</string>
     <string name="projectsList">https://springbootapi-production-c1e0.up.railway.app/projects</string>
+    <string name="staffList">https://springbootapi-production-c1e0.up.railway.app/get-staff</string>
     <string name="usn_from_email">https://springbootapi-production-c1e0.up.railway.app/usn/</string>
     <string name="we_are_sorry_please_try_again">Something went wrong, Please try again</string>
     <string name="internshipList">https://springbootapi-production-c1e0.up.railway.app/internships</string>
@@ -42,58 +43,43 @@
     <string name="intro_text_description">Collaborate and Plan Together for Projects and Internships Across Multiple Devices on Workloud Minimalist Interface.</string>
     <string name="sign_in">SIGN IN</string>
     <string name="sign_up">SIGN UP</string>
-
     <string name="sign_up_description_text">Enter your name, email id and password, to register with us.</string>
     <string name="name">Name</string>
     <string name="password">Password</string>
     <string name="email">Email</string>
-
     <string name="sign_in_description_text">Enter your name, email id and password, to register with us.</string>
-
     <string name="please_click_back_again_to_exit">Please click back again to return home.</string>
     <string name="please_wait">Please Wait&#8230;</string>
-
     <string name="nav_my_profile">My Profile</string>
     <string name="nav_sign_out">Sign Out</string>
-
     <string name="mobile">Mobile</string>
     <string name="update">UPDATE</string>
     <string name="my_profile_title">My Profile</string>
-
     <string name="create_board_title">Create Board</string>
     <string name="create">CREATE</string>
     <string name="board_name">Board Name</string>
-
     <string name="no_boards_are_available">No boards available, Either wait for your manager or create one yourself</string>
-
     <string name="action_add_list">Add List</string>
     <string name="hint_list_name">List Name</string>
     <string name="action_add_card">Add Card</string>
     <string name="hint_card_name">Card Name</string>
     <string name="add_list">Add List</string>
-
     <string name="members">Members</string>
-
     <string name="add_member">Add Member</string>
     <string name="cancel">CANCEL</string>
     <string name="add">ADD</string>
     <string name="search_member">Search Member</string>
-
     <string name="label_color">Label Color</string>
     <string name="select_color">Select Color</string>
     <string name="select_members">Select Members</string>
     <string name="due_date">Due Date</string>
     <string name="select_due_date">Select Due Date</string>
-
     <string name="delete_card">Delete Card</string>
-
     <string name="alert">Alert</string>
     <string name="confirmation_message_to_delete_card">Are you sure you want to delete card \'%1$s\'?</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
-
     <string name="str_select_label_color">Select Label Color</string>
-
     <string name="str_select_member">Select Member</string>
     <string name="default_notification_channel_id">project_mgmt_notification_channel_id</string>
     <string name="name_of_action_bar">Workloud - RVCE</string>

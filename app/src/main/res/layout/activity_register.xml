@@ -135,7 +135,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:backgroundTint="@color/white"
-                    android:hint="Enter batch (ex: 2020)"
+                    android:hint="Enter batch (ex: 2024)"
                     android:inputType="textEmailAddress"
                     android:textColor="@color/white"
                     android:layout_marginVertical="@dimen/_5sdp"

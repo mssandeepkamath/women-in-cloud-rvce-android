@@ -1,9 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/black"
     tools:context=".activity.PlaceActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <RelativeLayout
+        android:id="@+id/topBar"
+        android:background="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:padding="@dimen/_4sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:src="@drawable/back" />
+
+        <TextView
+            android:id="@+id/tvLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:fontFamily="sans-serif"
+            android:singleLine="true"
+            android:text="WIC-RVCE Staffs"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_17sdp"
+            android:textStyle="bold" />
+
+
+    </RelativeLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/lytRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/topBar"
+        >
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/vwRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/background_border"
+            />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+
+    <RelativeLayout
+        android:id="@+id/lytProgress"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        >
+
+        <com.skyfishjy.library.RippleBackground
+            android:id="@+id/barProgress"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            app:rb_color="#FAFF00DD"
+            app:rb_radius="32dp"
+            app:rb_rippleAmount="1"
+            app:rb_duration="2000"
+            app:rb_scale="3.5">
+
+            <ImageView
+                android:id="@+id/imgLogo"
+                android:layout_width="@dimen/_125sdp"
+                android:layout_height="@dimen/_110sdp"
+                android:layout_centerInParent="true"
+                android:contentDescription="@string/company_logo"
+                android:scaleType="centerCrop"
+                android:src="@drawable/women_cloud_nobg" />
+        </com.skyfishjy.library.RippleBackground>
+
+        <TextView
+            android:id="@+id/txtError"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/we_are_sorry_please_try_again"
+            android:layout_centerInParent="true"
+            android:textColor="@color/red"
+            android:textSize="@dimen/_17sdp"
+            />
+
+    </RelativeLayout>
+
+</RelativeLayout>

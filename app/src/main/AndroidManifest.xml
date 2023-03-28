@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.sandeep.womenincloudrvce">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -76,50 +77,50 @@
             android:resource="@array/preloaded_fonts" />
 
         <activity
-            android:name="com.example.tripfactory_concierge_android.ui.activities.CardDetailsActivity"
+            android:name="com.sandeep.womenincloudrvce.ui.activities.CardDetailsActivity"
             android:screenOrientation="portrait"
         />
 
         <activity
-            android:name="com.example.tripfactory_concierge_android.ui.activities.MembersActivity"
+            android:name="com.sandeep.womenincloudrvce.ui.activities.MembersActivity"
             android:screenOrientation="portrait"
        />
         <activity
-            android:name="com.example.tripfactory_concierge_android.ui.activities.TaskListActivity"
+            android:name="com.sandeep.womenincloudrvce.ui.activities.TaskListActivity"
             android:screenOrientation="portrait"
           />
         <activity
-            android:name="com.example.tripfactory_concierge_android.ui.activities.CreateBoardActivity"
+            android:name="com.sandeep.womenincloudrvce.ui.activities.CreateBoardActivity"
             android:screenOrientation="portrait"
           />
         <activity
-            android:name="com.example.tripfactory_concierge_android.ui.activities.MyProfileActivity"
+            android:name="com.sandeep.womenincloudrvce.ui.activities.MyProfileActivity"
             android:screenOrientation="portrait"
           />
-        <activity android:name="com.example.tripfactory_concierge_android.ui.activities.BaseActivity" />
+        <activity android:name="com.sandeep.womenincloudrvce.ui.activities.BaseActivity" />
         <activity
-            android:name="com.example.tripfactory_concierge_android.ui.activities.SigninActivity"
+            android:name="com.sandeep.womenincloudrvce.ui.activities.SigninActivity"
             android:screenOrientation="portrait"
           />
         <activity
-            android:name="com.example.tripfactory_concierge_android.ui.activities.SignupActivity"
+            android:name="com.sandeep.womenincloudrvce.ui.activities.SignupActivity"
             android:screenOrientation="portrait"
     />
         <activity
-            android:name="com.example.tripfactory_concierge_android.ui.activities.IntroActivity"
+            android:name="com.sandeep.womenincloudrvce.ui.activities.IntroActivity"
             android:screenOrientation="portrait"
            />
         <activity
-            android:name="com.example.tripfactory_concierge_android.ui.activities.SplashActivity"
+            android:name="com.sandeep.womenincloudrvce.ui.activities.SplashActivity"
             android:screenOrientation="portrait"
             />
         <activity
-            android:name="com.example.tripfactory_concierge_android.ui.activities.MainActivity"
+            android:name="com.sandeep.womenincloudrvce.ui.activities.MainActivity"
             android:screenOrientation="portrait"
 />
 
         <service
-            android:name="com.example.tripfactory_concierge_android.fcm.MyFirebaseMessagingService"
+            android:name="com.sandeep.womenincloudrvce.fcm.MyFirebaseMessagingService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />

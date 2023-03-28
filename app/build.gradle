@@ -6,14 +6,14 @@ plugins {
 }
 
 android {
-    namespace 'com.example.tripfactory_concierge_android'
+    namespace 'com.sandeep.womenincloudrvce'
     compileSdk 32
 
     defaultConfig {
-        applicationId "com.example.tripfactory_concierge_android"
+        applicationId "com.sandeep.womenincloudrvce"
         minSdk 21
         targetSdk 32
-        versionCode 1
+        versionCode 7
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
