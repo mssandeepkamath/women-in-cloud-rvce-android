@@ -14,7 +14,7 @@
 
   <img src="https://user-images.githubusercontent.com/90695071/232440631-db760891-a6c6-44a4-9c8b-caf49cfc40e3.png" width="17%" height="17%" /> <img src="https://user-images.githubusercontent.com/90695071/232440662-c0489d3a-171c-4f29-998e-872f4759bbac.png" width="17%" height="17%" /> <img src="https://user-images.githubusercontent.com/90695071/232440692-89b82203-e7e3-4f6d-8c0c-26f844b15a2d.png" width="17%" height="17%" /> <img src="https://user-images.githubusercontent.com/90695071/232441624-af761065-dd2a-41f0-b0ab-3a2a05ab7228.png" width="17%" height="17%" /> <img src="https://user-images.githubusercontent.com/90695071/232442093-af4d25c4-0056-48e9-88f6-23ade1f14632.png" width="17%" height="17%" />
   
-### Class diagram (associations are excluded):
+### Class diagram (Associations are excluded):
 
 ![image](https://user-images.githubusercontent.com/90695071/232449390-b4fe8ce7-95f3-4748-afa4-805ab6b8b805.png)
 
