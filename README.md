@@ -6,7 +6,7 @@
  
  > https://play.google.com/store/apps/details?id=com.sandeep.womenincloudrvce
  
-### API Repository link:
+### API repository link:
 
 > https://github.com/mssandeepkamath/women-in-cloud-rvce-api
 
