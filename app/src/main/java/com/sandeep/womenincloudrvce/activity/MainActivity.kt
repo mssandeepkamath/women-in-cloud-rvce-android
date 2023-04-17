@@ -64,13 +64,13 @@ class MainActivity : AppCompatActivity() {
                     intentProvider(VoucherActivity())
                 }
                 R.id.about_us -> {
-                    var intent = Intent(Intent.ACTION_VIEW)
+                    val intent = Intent(Intent.ACTION_VIEW)
                     intent.data=Uri.parse("https://womenincloud.com/about-us/")
                     startActivity(intent)
                 }
                 R.id.rate_us -> {
                     val playStoreIntent = Intent(Intent.ACTION_VIEW)
-                    intent.data = Uri.parse("https://play.google.com/store/apps/details?id=com.sandeep.womenincloudrvce")
+                    playStoreIntent.data = Uri.parse("https://play.google.com/store/apps/details?id=com.sandeep.womenincloudrvce")
                     bindingMainActivity.lytDrawer.closeDrawers()
                     startActivity(playStoreIntent)
                 }
