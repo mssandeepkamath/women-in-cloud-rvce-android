@@ -20,7 +20,13 @@ Women In Cloud RVCE Android is an unofficial app designed to enhance the Women I
 
 ## Play Store Link
 
-Explore the app on the Play Store: [Women In Cloud RVCE Android](https://play.google.com/store/apps/details?id=com.sandeep.womenincloudrvce)
+<p align="left">
+<a href="https://play.google.com/store/apps/details?id=com.sandeep.womenincloudrvce">
+    <img alt="Get it on Google Play"
+        height="80"
+        src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" />
+</a>  
+        </p>
 
 ## API Repository Link
 
@@ -53,3 +59,5 @@ For any questions or feedback, feel free to [contact us](mailto:your.email@examp
 ---
 
 **Disclaimer:** This app is developed independently and is not affiliated with any official Women In Cloud RVCE platforms.
+
+
