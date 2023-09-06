@@ -38,7 +38,7 @@ Access the API repository: [women-in-cloud-rvce-api](https://github.com/mssandee
 
 ## Class Diagram
 
-![Class Diagram](https://user-images.githubusercontent.com/90695071/232449390-b4fe8ce7-95f3-4748-afa4-805ab6b8b805.png)
+Refer to the [Java class diagram](https://user-images.githubusercontent.com/90695071/232449390-b4fe8ce7-95f3-4748-afa4-805ab6b8b805.png) for an overview of the application's structure.
 
 ## Contributing
 
