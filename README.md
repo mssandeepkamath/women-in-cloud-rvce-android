@@ -2,7 +2,7 @@
 
 An Unofficial Android Application for Women In Cloud RVCE Center of Excellence
 
-<a href="https://render.com"><img alt="Production" src="https://img.shields.io/badge/production-down-darkred.svg"/></a>
+<a href="https://render.com"><img alt="Production" src="https://img.shields.io/badge/production-up-lgreen.svg"/></a>
 [![Maintainability](https://api.codeclimate.com/v1/badges/a5688e693a48ff0953ca/maintainability)](https://codeclimate.com/github/mssandeepkamath/women-in-cloud-rvce-api/maintainability)
 
 ![App Preview](https://user-images.githubusercontent.com/90695071/229217757-4a582538-3619-4a4a-9970-b0537a488e50.png)
